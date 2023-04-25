@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEEL writing template</title>
+    <script src="https://kit.fontawesome.com/a98e96b6de.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="templatestyle.css">
+</head>
+<body>
+<div class="content">
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="padding: 10px; z-index: 20;">&times;</a>
+    <div class="overlay-content">
+      <a href="./writingtemplates.html" style="font-size: 40px; font-weight: bold; width: 89%; left: 6%; display: inline-block; margin-bottom: 15px;">Home</a><br>
+      <a href="./aces.html">ACES</a>
+      <a href="./cope.html">COPE</a>
+      <a href="./deal.html">DEAL</a>
+      <a href="./peel.html"><b>PEEL</b></a>
+      <a href="./races.html">RACES</a>
+      <a href="./rain.html">RAIN</a>
+      <a href="./tap.html">TAP</a>
+      <a href="./teel.html">TEEL</a>
+      <a> </a>
+    </div>
+  </div>
+  <div class="topBan">
+    <h1>Writing Templates</h1>
+    
+  </div>
+  <div class="par"></div>
+<div class="rec"></div>
+<div class="recpar"></div>
+  <div class="topnav">
+  <span style="cursor:pointer" onclick="openNav()">PEEL <i class="fa-solid fa-caret-down" style="color: #ffffff;"></i></i></span>
+  </div><br><br><br>
+            <h2>Point</h2>
+            <label class="switch">
+              <h2 style="margin-left: -105px;">Example</h2>
+              <input type="checkbox" id="toggleButton">
+              <span class="slider round"></span>
+          </label>
+            <p id="peelp" contenteditable="true" data-placeholder="Start typing..."></p>
+            <p id="peelpex" contenteditable style="display:none;">Infants should not be given iPads, because studies show children under two can face developmental delays if they are exposed to too much screen time.</p>
+            <h3>State your main idea/argument</h3><br>
+            <h2>Evidence/Example</h2>
+            <p id="peele" contenteditable="true" data-placeholder="Start typing..."></p>
+            <p id="peeleex" contenteditable style="display:none;">A recent paediatric study showed that infants who are exposed to too much screen time may experience delays in speech development.</p>
+            <h3>Provide evidence supporting your point</h3><br>
+            <h2>Explain</h2>
+            <p id="peel2e" contenteditable="true" data-placeholder="Start typing..."></p>
+            <p id="peel2eex" contenteditable style="display:none;">The reason infants are facing these delays is because screen time is replacing other key developmental activities.</p>
+            <h3>Explain how your evidence supports your point</h3><br>
+            <h2>Link</h2>
+            <p id="peell" contenteditable="true" data-placeholder="Start typing..."></p>
+            <p id="peellex" contenteditable style="display:none;">The evidence suggests that infants who have a lot of screen time experience negative consequences in their speech development, and therefore they should not be exposed to iPads at such a young age.</p>
+            <h3>Link to next idea/paragraph or back to your central point</h3><br>
+            <hr><br>
+            <button class="combBtn" id="combineButton">Combine <i class="fa-solid fa-layer-group" style="color: #000000;"></i></button>
+            <button class="copyBtn" id="copy" onclick="copyToClipboard()">Copy <i class="fa-regular fa-copy" style="color: #000000;"></i></button>
+            <p id="peeldrft" contenteditable="true" data-placeholder="Start typing..."></p>
+            <p id="peeldrftex" contenteditable style="display:none;">Infants should not be given iPads, because studies show children under two can face developmental delays if they are exposed to too much screen time. A recent paediatric study showed that infants who are exposed to too much screen time may experience delays in speech development. The reason infants are facing these delays is because screen time is replacing other key developmental activities. The evidence suggests that infants who have a lot of screen time experience negative consequences in their speech development, and therefore they should not be exposed to iPads at such a young age.</p>
+            <h3>Click combine to compile a draft</h3>
+            </div>
+            <button class="reset" id="resetButton"><i class="fa-regular fa-trash-can" style="color: #000000;"></i></button>
+        
+
+            <div class="botBan">
+              <a href="https://www.wab-edu.cn" target="_blank"><img src="https://libapps-au.s3-ap-southeast-2.amazonaws.com/customers/721/images/wab_logo_white_300dpi.png" alt="WAB logo"></a>
+              <div class="vl"></div>
+              <h4>This website was made using HTML, CSS, and JavaScript. <a href="https://github.com" target="_blank" style="color: #ffffff;">Github</a></h4>
+            </div>
+            
+    <script>
+var resetButton = document.getElementById("resetButton");
+var combineButton = document.getElementById("combineButton");
+var peelp = document.getElementById("peelp");
+var peelpex = document.getElementById("peelpex");
+var peele = document.getElementById("peele");
+var peeleex = document.getElementById("peeleex");
+var peel2e = document.getElementById("peel2e");
+var peel2eex = document.getElementById("peel2eex");
+var peell = document.getElementById("peell");
+var peellex = document.getElementById("peellex");
+var peeldrft = document.getElementById("peeldrft");
+var peeldrftex = document.getElementById("peeldrftex");
+var originalpeelp = peelp.innerHTML;
+var originalpeele = peele.innerHTML;
+var originalpeel2e = peel2e.innerHTML;
+var originalpeell = peell.innerHTML;
+var originalpeeldrft = peeldrft.innerHTML;
+var originalpeelpex = peelpex.innerHTML;
+var originalpeeleex = peeleex.innerHTML;
+var originalpeel2eex = peel2eex.innerHTML;
+var originalpeellex = peellex.innerHTML;
+var originalpeeldrftex = peeldrftex.innerHTML;
+var toggleButton = document.getElementById('toggleButton');
+const copy = document.getElementById("copy");
+const comb = document.getElementById("combineButton");
+var myNav = document.getElementById("myNav");
+const savedpeelp = localStorage.getItem("peelp");
+const savedpeele = localStorage.getItem("peele");
+const savedpeel2e = localStorage.getItem("peel2e");
+const savedpeell = localStorage.getItem("peell");
+const savedpeeldrft = localStorage.getItem("peeldrft");
+
+
+if (savedpeelp) {
+        peelp.textContent = savedpeelp;
+        peelp.removeAttribute("data-placeholder");
+      }
+
+      peelp.addEventListener("input", function() {
+        if (this.textContent.trim() === "") {
+          this.setAttribute("data-placeholder", "Start typing...");
+          localStorage.removeItem("peelp");
+        } else {
+          this.removeAttribute("data-placeholder");
+          localStorage.setItem("peelp", this.textContent);
+        }
+      });
+
+      if (savedpeele) {
+        peele.textContent = savedpeele;
+        peele.removeAttribute("data-placeholder");
+      }
+
+      peele.addEventListener("input", function() {
+        if (this.textContent.trim() === "") {
+          this.setAttribute("data-placeholder", "Start typing...");
+          localStorage.removeItem("peele");
+        } else {
+          this.removeAttribute("data-placeholder");
+          localStorage.setItem("peele", this.textContent);
+        }
+      });
+
+      if (savedpeel2e) {
+        peel2e.textContent = savedpeel2e;
+        peel2e.removeAttribute("data-placeholder");
+      }
+
+      peel2e.addEventListener("input", function() {
+        if (this.textContent.trim() === "") {
+          this.setAttribute("data-placeholder", "Start typing...");
+          localStorage.removeItem("peel2e");
+        } else {
+          this.removeAttribute("data-placeholder");
+          localStorage.setItem("peel2e", this.textContent);
+        }
+      });
+
+      if (savedpeell) {
+        peell.textContent = savedpeell;
+        peell.removeAttribute("data-placeholder");
+      }
+
+      peell.addEventListener("input", function() {
+        if (this.textContent.trim() === "") {
+          this.setAttribute("data-placeholder", "Start typing...");
+          localStorage.removeItem("peell");
+        } else {
+          this.removeAttribute("data-placeholder");
+          localStorage.setItem("peell", this.textContent);
+        }
+      });
+
+      if (savedpeeldrft) {
+        peeldrft.textContent = savedpeeldrft;
+        peeldrft.removeAttribute("data-placeholder");
+      }
+
+      peeldrft.addEventListener("input", function() {
+        if (this.textContent.trim() === "") {
+          this.setAttribute("data-placeholder", "Start typing...");
+          localStorage.removeItem("peeldrft");
+        } else {
+          this.removeAttribute("data-placeholder");
+          localStorage.setItem("peeldrft", this.textContent);
+        }
+      });
+  
+peelp.addEventListener("paste", function(e) {
+  e.preventDefault();
+  const text = e.clipboardData.getData("text/plain");
+  document.execCommand("insertText", false, text);
+  peelp.normalize();
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  const range = document.createRange();
+  range.selectNodeContents(peelp);
+  range.collapse(false);
+  selection.addRange(range);
+});
+
+peele.addEventListener("paste", function(e) {
+  e.preventDefault();
+  const text = e.clipboardData.getData("text/plain");
+  document.execCommand("insertText", false, text);
+  peele.normalize();
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  const range = document.createRange();
+  range.selectNodeContents(peele);
+  range.collapse(false);
+  selection.addRange(range);
+});
+
+peel2e.addEventListener("paste", function(e) {
+  e.preventDefault();
+  const text = e.clipboardData.getData("text/plain");
+  document.execCommand("insertText", false, text);
+  peel2e.normalize();
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  const range = document.createRange();
+  range.selectNodeContents(peel2e);
+  range.collapse(false);
+  selection.addRange(range);
+});
+
+peell.addEventListener("paste", function(e) {
+  e.preventDefault();
+  const text = e.clipboardData.getData("text/plain");
+  document.execCommand("insertText", false, text);
+  peell.normalize();
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  const range = document.createRange();
+  range.selectNodeContents(peell);
+  range.collapse(false);
+  selection.addRange(range);
+});
+
+peeldrft.addEventListener("paste", function(e) {
+  e.preventDefault();
+  const text = e.clipboardData.getData("text/plain");
+  document.execCommand("insertText", false, text);
+  peeldrft.normalize();
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  const range = document.createRange();
+  range.selectNodeContents(peeldrft);
+  range.collapse(false);
+  selection.addRange(range);
+});
+
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+  document.getElementsByClassName("topnav").style = topnav.style;
+}
+
+peelp.addEventListener("input", function() {
+  localStorage.setItem("peelp", peelp.innerHTML);
+});
+
+window.addEventListener("load", function() {
+  var savedContent = localStorage.getItem("peelp");
+  if (savedContent) {
+    peelp.innerHTML = savedContent;
+  }
+});
+
+peele.addEventListener("input", function() {
+  localStorage.setItem("peele", peele.innerHTML);
+});
+
+window.addEventListener("load", function() {
+  var savedContent = localStorage.getItem("peele");
+  if (savedContent) {
+    peele.innerHTML = savedContent;
+  }
+});
+
+peel2e.addEventListener("input", function() {
+  localStorage.setItem("peel2e", peel2e.innerHTML);
+});
+
+window.addEventListener("load", function() {
+  var savedContent = localStorage.getItem("peel2e");
+  if (savedContent) {
+    peel2e.innerHTML = savedContent;
+  }
+});
+
+peell.addEventListener("input", function() {
+  localStorage.setItem("peell", peell.innerHTML);
+});
+
+window.addEventListener("load", function() {
+  var savedContent = localStorage.getItem("peell");
+  if (savedContent) {
+    peell.innerHTML = savedContent;
+  }
+});
+
+peeldrft.addEventListener("input", function() {
+  localStorage.setItem("peeldrft", peeldrft.innerHTML);
+});
+
+window.addEventListener("load", function() {
+  var savedContent = localStorage.getItem("peeldrft");
+  if (savedContent) {
+    peeldrft.innerHTML = savedContent;
+  }
+});
+
+resetButton.addEventListener("click", function() {
+  peelp.innerHTML = originalpeelp;
+  peelpex.innerHTML = originalpeelpex;
+  localStorage.removeItem("peelp");
+  peelp.setAttribute("data-placeholder", "Start typing...");
+  peele.innerHTML = originalpeele;
+  peeleex.innerHTML = originalpeeleex;
+  localStorage.removeItem("peele");
+  peele.setAttribute("data-placeholder", "Start typing...");
+  peel2e.innerHTML = originalpeel2e;
+  peel2eex.innerHTML = originalpeel2eex;
+  localStorage.removeItem("peel2e");
+  peel2e.setAttribute("data-placeholder", "Start typing...");
+  peell.innerHTML = originalpeell;
+  peellex.innerHTML = originalpeellex;
+  localStorage.removeItem("peell");
+  peell.setAttribute("data-placeholder", "Start typing...");
+  peeldrft.innerHTML = originalpeeldrft;
+  peeldrftex.innerHTML = originalpeeldrftex;
+  localStorage.removeItem("peeldrft");
+  peeldrft.setAttribute("data-placeholder", "Start typing...");
+});
+
+toggleButton.addEventListener("click", function() {
+  if (peelp.style.display === "none") {
+    peelp.style.display = "";
+    peelpex.style.display = "none";
+    peele.style.display = "";
+    peeleex.style.display = "none";
+    peel2e.style.display = "";
+    peel2eex.style.display = "none";
+    peell.style.display = "";
+    peellex.style.display = "none";
+    peeldrft.style.display = "";
+    peeldrftex.style.display = "none";
+  } else {
+    peelp.style.display = "none";
+    peelpex.style.display = "";
+    peele.style.display = "none";
+    peeleex.style.display = "";
+    peel2e.style.display = "none";
+    peel2eex.style.display = "";
+    peell.style.display = "none";
+    peellex.style.display = "";
+    peeldrft.style.display = "none";
+    peeldrftex.style.display = "";
+  }
+});
+
+combineButton.addEventListener("click", function() {
+  peeldrft.innerHTML = peelp.innerHTML + "\n" + peele.innerHTML + "\n" + peel2e.innerHTML + "\n" + peell.innerHTML;
+  peeldrft.removeAttribute("data-placeholder");
+  localStorage.setItem("peeldrft", peeldrft.innerHTML);
+  peeldrftex.innerHTML = peelpex.innerHTML + "\n" + peeleex.innerHTML + "\n" + peel2eex.innerHTML + "\n" + peellex.innerHTML;
+});
+
+function copyToClipboard() {
+    if (peelp.style.display === "none") {
+  const text = document.getElementById("peeldrftex").innerText;
+  navigator.clipboard.writeText(text);
+    } else {
+        const text = document.getElementById("peeldrft").innerText;
+  navigator.clipboard.writeText(text);
+    }
+}
+
+copy.addEventListener("click", function() {
+  copy.classList.remove("copyBtn");
+  copy.classList.add("green");
+  copy.innerHTML = "Copied <i class='fa-solid fa-check' style='color: #000000;'></i>";
+  setTimeout(function() {
+    copy.classList.remove("green");
+    copy.classList.add("copyBtn");
+    copy.innerHTML = "Copy <i class='fa-regular fa-copy' style='color: #000000;'></i>";
+  }, 2000);
+});
+
+comb.addEventListener("click", function() {
+  comb.innerHTML = "Combined <i class='fa-solid fa-check' style='color: #000000;'></i>";
+  setTimeout(function() {
+    comb.innerHTML = "Combine <i class='fa-solid fa-layer-group' style='color: #000000;'></i>";
+  }, 2000);
+});
+</script>
+</body>
+</html>

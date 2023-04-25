@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COPE writing template</title>
+    <script src="https://kit.fontawesome.com/a98e96b6de.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="templatestyle.css">
+</head>
+<body>
+  <div class="content">
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="padding: 10px; z-index: 20;">&times;</a>
+    <div class="overlay-content">
+      <a href="./writingtemplates.html" style="font-size: 40px; font-weight: bold; width: 89%; left: 6%; display: inline-block; margin-bottom: 15px;">Home</a><br>
+      <a href="./aces.html">ACES</a>
+      <a href="./cope.html"><b>COPE</b></a>
+      <a href="./deal.html">DEAL</a>
+      <a href="./peel.html">PEEL</a>
+      <a href="./races.html">RACES</a>
+      <a href="./rain.html">RAIN</a>
+      <a href="./tap.html">TAP</a>
+      <a href="./teel.html">TEEL</a>
+      <a> </a>
+    </div>
+  </div>
+  <div class="topBan">
+    <h1>Writing Templates</h1>
+    
+  </div>
+  <div class="par"></div>
+<div class="rec"></div>
+<div class="recpar"></div>
+  <div class="topnav">
+  <span style="cursor:pointer" onclick="openNav()">COPE <i class="fa-solid fa-caret-down" style="color: #ffffff;"></i></i></span>
+  </div><br><br>
+            <h2>Context</h2>
+            <label class="switch">
+                <h2 style="margin-left: -105px;">Example</h2>
+              <input type="checkbox" id="toggleButton">
+              <span class="slider round"></span>
+          </label>
+            <p id="copec" contenteditable="true" data-placeholder="Start typing..."></p>
+            <p id="copecex" contenteditable style="display:none;">Our city is currently experiencing high levels of traffic congestion and air pollution.</p>
+            <h3>Provide background information or context for your argument</h3><br>
+            <h2>Opinion</h2>
+            <p id="copeo" contenteditable="true" data-placeholder="Start typing..."></p>
+            <p id="copeoex" contenteditable style="display:none;">Building more bike lanes would help to reduce traffic congestion and improve air quality.</p>
+            <h3>Clearly state your opinion or point of view</h3><br>
+            <h2>Proof</h2>
+            <p id="copep" contenteditable="true" data-placeholder="Start typing..."></p>
+            <p id="copepex" contenteditable style="display:none;">Studies have found that cities with robust bike lane networks experience reduced traffic congestion and improved air quality, as well as increased opportunities for physical activity.</p>
+            <h3>Offer evidence and support for your opinion</h3><br>
+            <h2>Ending</h2>
+            <p id="copee" contenteditable="true" data-placeholder="Start typing..."></p>
+            <p id="copeeex" contenteditable style="display:none;">By investing in bike lane infrastructure, we can promote a healthier and more sustainable future for our city.</p>
+            <h3>Summarize your argument and conclude with a call to action or final thought</h3><br>
+            <hr><br>
+            <button class="combBtn" id="combineButton">Combine <i class="fa-solid fa-layer-group" style="color: #000000;"></i></button>
+            <button class="copyBtn" id="copy" onclick="copyToClipboard()">Copy <i class="fa-regular fa-copy" style="color: #000000;"></i></button>
+            <p id="copedrft" contenteditable="true" data-placeholder="Start typing..."></p>
+            <p id="copedrftex" contenteditable style="display:none;">Our city is currently experiencing high levels of traffic congestion and air pollution. Building more bike lanes would help to reduce traffic congestion and improve air quality. Studies have found that cities with robust bike lane networks experience reduced traffic congestion and improved air quality, as well as increased opportunities for physical activity. By investing in bike lane infrastructure, we can promote a healthier and more sustainable future for our city.</p>
+            <h3>Click combine to compile a draft</h3>
+            </div>
+            <button class="reset" id="resetButton"><i class="fa-regular fa-trash-can" style="color: #000000;"></i></button>
+            <div class="botBan">
+              <a href="https://www.wab-edu.cn" target="_blank"><img src="https://libapps-au.s3-ap-southeast-2.amazonaws.com/customers/721/images/wab_logo_white_300dpi.png" alt="WAB logo"></a>
+              <div class="vl"></div>
+              <h4>This website was made using HTML, CSS, and JavaScript. <a href="https://github.com" target="_blank" style="color: #ffffff;">Github</a></h4>
+            </div>
+            
+    <script>
+var resetButton = document.getElementById("resetButton");
+var combineButton = document.getElementById("combineButton");
+var copec = document.getElementById("copec");
+var copecex = document.getElementById("copecex");
+var copeo = document.getElementById("copeo");
+var copeoex = document.getElementById("copeoex");
+var copep = document.getElementById("copep");
+var copepex = document.getElementById("copepex");
+var copee = document.getElementById("copee");
+var copeeex = document.getElementById("copeeex");
+var copedrft = document.getElementById("copedrft");
+var copedrftex = document.getElementById("copedrftex");
+var originalcopec = copec.innerHTML;
+var originalcopeo = copeo.innerHTML;
+var originalcopep = copep.innerHTML;
+var originalcopee = copee.innerHTML;
+var originalcopedrft = copedrft.innerHTML;
+var originalcopecex = copecex.innerHTML;
+var originalcopeoex = copeoex.innerHTML;
+var originalcopepex = copepex.innerHTML;
+var originalcopeeex = copeeex.innerHTML;
+var originalcopedrftex = copedrftex.innerHTML;
+var toggleButton = document.getElementById('toggleButton');
+const copy = document.getElementById("copy");
+const comb = document.getElementById("combineButton");
+var myNav = document.getElementById("myNav");
+const savedcopec = localStorage.getItem("copec");
+const savedcopeo = localStorage.getItem("copeo");
+const savedcopep = localStorage.getItem("copep");
+const savedcopee = localStorage.getItem("copee");
+const savedcopedrft = localStorage.getItem("copedrft");
+
+
+if (savedcopec) {
+        copec.textContent = savedcopec;
+        copec.removeAttribute("data-placeholder");
+      }
+
+      copec.addEventListener("input", function() {
+        if (this.textContent.trim() === "") {
+          this.setAttribute("data-placeholder", "Start typing...");
+          localStorage.removeItem("copec");
+        } else {
+          this.removeAttribute("data-placeholder");
+          localStorage.setItem("copec", this.textContent);
+        }
+      });
+
+      if (savedcopeo) {
+        copeo.textContent = savedcopeo;
+        copeo.removeAttribute("data-placeholder");
+      }
+
+      copeo.addEventListener("input", function() {
+        if (this.textContent.trim() === "") {
+          this.setAttribute("data-placeholder", "Start typing...");
+          localStorage.removeItem("copeo");
+        } else {
+          this.removeAttribute("data-placeholder");
+          localStorage.setItem("copeo", this.textContent);
+        }
+      });
+
+      if (savedcopep) {
+        copep.textContent = savedcopep;
+        copep.removeAttribute("data-placeholder");
+      }
+
+      copep.addEventListener("input", function() {
+        if (this.textContent.trim() === "") {
+          this.setAttribute("data-placeholder", "Start typing...");
+          localStorage.removeItem("copep");
+        } else {
+          this.removeAttribute("data-placeholder");
+          localStorage.setItem("copep", this.textContent);
+        }
+      });
+
+      if (savedcopee) {
+        copee.textContent = savedcopee;
+        copee.removeAttribute("data-placeholder");
+      }
+
+      copee.addEventListener("input", function() {
+        if (this.textContent.trim() === "") {
+          this.setAttribute("data-placeholder", "Start typing...");
+          localStorage.removeItem("copee");
+        } else {
+          this.removeAttribute("data-placeholder");
+          localStorage.setItem("copee", this.textContent);
+        }
+      });
+
+      if (savedcopedrft) {
+        copedrft.textContent = savedcopedrft;
+        copedrft.removeAttribute("data-placeholder");
+      }
+
+      copedrft.addEventListener("input", function() {
+        if (this.textContent.trim() === "") {
+          this.setAttribute("data-placeholder", "Start typing...");
+          localStorage.removeItem("copedrft");
+        } else {
+          this.removeAttribute("data-placeholder");
+          localStorage.setItem("copedrft", this.textContent);
+        }
+      });
+  
+copec.addEventListener("paste", function(e) {
+  e.preventDefault();
+  const text = e.clipboardData.getData("text/plain");
+  document.execCommand("insertText", false, text);
+  copec.normalize();
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  const range = document.createRange();
+  range.selectNodeContents(copec);
+  range.collapse(false);
+  selection.addRange(range);
+});
+
+copeo.addEventListener("paste", function(e) {
+  e.preventDefault();
+  const text = e.clipboardData.getData("text/plain");
+  document.execCommand("insertText", false, text);
+  copeo.normalize();
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  const range = document.createRange();
+  range.selectNodeContents(copeo);
+  range.collapse(false);
+  selection.addRange(range);
+});
+
+copep.addEventListener("paste", function(e) {
+  e.preventDefault();
+  const text = e.clipboardData.getData("text/plain");
+  document.execCommand("insertText", false, text);
+  copep.normalize();
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  const range = document.createRange();
+  range.selectNodeContents(copep);
+  range.collapse(false);
+  selection.addRange(range);
+});
+
+copee.addEventListener("paste", function(e) {
+  e.preventDefault();
+  const text = e.clipboardData.getData("text/plain");
+  document.execCommand("insertText", false, text);
+  copee.normalize();
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  const range = document.createRange();
+  range.selectNodeContents(copee);
+  range.collapse(false);
+  selection.addRange(range);
+});
+
+copedrft.addEventListener("paste", function(e) {
+  e.preventDefault();
+  const text = e.clipboardData.getData("text/plain");
+  document.execCommand("insertText", false, text);
+  copedrft.normalize();
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  const range = document.createRange();
+  range.selectNodeContents(copedrft);
+  range.collapse(false);
+  selection.addRange(range);
+});
+
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+  document.getElementsByClassName("topnav").style = topnav.style;
+}
+
+copec.addEventListener("input", function() {
+  localStorage.setItem("copec", copec.innerHTML);
+});
+
+window.addEventListener("load", function() {
+  var savedContent = localStorage.getItem("copec");
+  if (savedContent) {
+    copec.innerHTML = savedContent;
+  }
+});
+
+copeo.addEventListener("input", function() {
+  localStorage.setItem("copeo", copeo.innerHTML);
+});
+
+window.addEventListener("load", function() {
+  var savedContent = localStorage.getItem("copeo");
+  if (savedContent) {
+    copeo.innerHTML = savedContent;
+  }
+});
+
+copep.addEventListener("input", function() {
+  localStorage.setItem("copep", copep.innerHTML);
+});
+
+window.addEventListener("load", function() {
+  var savedContent = localStorage.getItem("copep");
+  if (savedContent) {
+    copep.innerHTML = savedContent;
+  }
+});
+
+copee.addEventListener("input", function() {
+  localStorage.setItem("copee", copee.innerHTML);
+});
+
+window.addEventListener("load", function() {
+  var savedContent = localStorage.getItem("copee");
+  if (savedContent) {
+    copee.innerHTML = savedContent;
+  }
+});
+
+copedrft.addEventListener("input", function() {
+  localStorage.setItem("copedrft", copedrft.innerHTML);
+});
+
+window.addEventListener("load", function() {
+  var savedContent = localStorage.getItem("copedrft");
+  if (savedContent) {
+    copedrft.innerHTML = savedContent;
+  }
+});
+
+resetButton.addEventListener("click", function() {
+  copec.innerHTML = originalcopec;
+  copecex.innerHTML = originalcopecex;
+  localStorage.removeItem("copec");
+  copec.setAttribute("data-placeholder", "Start typing...");
+  copeo.innerHTML = originalcopeo;
+  copeoex.innerHTML = originalcopeoex;
+  localStorage.removeItem("copeo");
+  copeo.setAttribute("data-placeholder", "Start typing...");
+  copep.innerHTML = originalcopep;
+  copepex.innerHTML = originalcopepex;
+  localStorage.removeItem("copep");
+  copep.setAttribute("data-placeholder", "Start typing...");
+  copee.innerHTML = originalcopee;
+  copeeex.innerHTML = originalcopeeex;
+  localStorage.removeItem("copee");
+  copee.setAttribute("data-placeholder", "Start typing...");
+  copedrft.innerHTML = originalcopedrft;
+  copedrftex.innerHTML = originalcopedrftex;
+  localStorage.removeItem("copedrft");
+  copedrft.setAttribute("data-placeholder", "Start typing...");
+});
+
+toggleButton.addEventListener("click", function() {
+  if (copec.style.display === "none") {
+    copec.style.display = "";
+    copecex.style.display = "none";
+    copeo.style.display = "";
+    copeoex.style.display = "none";
+    copep.style.display = "";
+    copepex.style.display = "none";
+    copee.style.display = "";
+    copeeex.style.display = "none";
+    copedrft.style.display = "";
+    copedrftex.style.display = "none";
+  } else {
+    copec.style.display = "none";
+    copecex.style.display = "";
+    copeo.style.display = "none";
+    copeoex.style.display = "";
+    copep.style.display = "none";
+    copepex.style.display = "";
+    copee.style.display = "none";
+    copeeex.style.display = "";
+    copedrft.style.display = "none";
+    copedrftex.style.display = "";
+  }
+});
+
+combineButton.addEventListener("click", function() {
+  copedrft.innerHTML = copec.innerHTML + "\n" + copeo.innerHTML + "\n" + copep.innerHTML + "\n" + copee.innerHTML;
+  copedrft.removeAttribute("data-placeholder");
+  copedrftex.innerHTML = copecex.innerHTML + "\n" + copeoex.innerHTML + "\n" + copepex.innerHTML + "\n" + copeeex.innerHTML;
+});
+
+function copyToClipboard() {
+    if (copec.style.display === "none") {
+  const text = document.getElementById("copedrftex").innerText;
+  navigator.clipboard.writeText(text);
+    } else {
+        const text = document.getElementById("copedrft").innerText;
+  navigator.clipboard.writeText(text);
+    }
+}
+
+copy.addEventListener("click", function() {
+  copy.classList.remove("copyBtn");
+  copy.classList.add("green");
+  copy.innerHTML = "Copied <i class='fa-solid fa-check' style='color: #000000;'></i>";
+  setTimeout(function() {
+    copy.classList.remove("green");
+    copy.classList.add("copyBtn");
+    copy.innerHTML = "Copy <i class='fa-regular fa-copy' style='color: #000000;'></i>";
+  }, 2000);
+});
+
+comb.addEventListener("click", function() {
+  comb.innerHTML = "Combined <i class='fa-solid fa-check' style='color: #000000;'></i>";
+  setTimeout(function() {
+    comb.innerHTML = "Combine <i class='fa-solid fa-layer-group' style='color: #000000;'></i>";
+  }, 2000);
+});
+</script>
+</body>
+</html>

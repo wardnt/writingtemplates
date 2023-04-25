@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACES writing template</title>
+    <script src="https://kit.fontawesome.com/a98e96b6de.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="templatestyle.css">
+</head>
+<body>
+  <div class="content">
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="padding: 10px; z-index: 20;">&times;</a>
+    <div class="overlay-content">
+      <a href="./writingtemplates.html" style="font-size: 40px; font-weight: bold; width: 89%; left: 6%; display: inline-block; margin-bottom: 15px;">Home</a><br>
+      <a href="./aces.html"><b>ACES</b></a>
+      <a href="./cope.html">COPE</a>
+      <a href="./deal.html">DEAL</a>
+      <a href="./peel.html">PEEL</a>
+      <a href="./races.html">RACES</a>
+      <a href="./rain.html">RAIN</a>
+      <a href="./tap.html">TAP</a>
+      <a href="./teel.html">TEEL</a>
+      <a> </a>
+    </div>
+  </div>
+  <div class="topBan">
+    <h1>Writing Templates</h1>
+    
+  </div>
+  <div class="par"></div>
+<div class="rec"></div>
+<div class="recpar"></div>
+  <div class="topnav">
+  <span style="cursor:pointer" onclick="openNav()">ACES <i class="fa-solid fa-caret-down" style="color: #ffffff;"></i></i></span>
+  </div><br><br>
+            <h2>Answer</h2>
+            <label class="switch">
+                <h2 style="margin-left: -105px;">Example</h2>
+              <input type="checkbox" id="toggleButton">
+              <span class="slider round"></span>
+          </label>
+            <p id="acesa" contenteditable="true" data-placeholder="Start typing..."></p>
+            <p id="acesaex" contenteditable style="display:none;">Students should be required to wear uniforms in school to promote a sense of unity and discipline.</p>
+            <h3>State your main point or answer to the question being asked</h3><br>
+            <h2>Cite</h2>
+            <p id="acesc" contenteditable="true" data-placeholder="Start typing..."></p>
+            <p id="acescex" contenteditable style="display:none;">According to a study published in the Journal of Educational Research, schools that require uniforms have lower rates of absenteeism and disciplinary issues.</p>
+            <h3>Provide evidence to support your answer</h3><br>
+            <h2>Explain</h2>
+            <p id="acese" contenteditable="true" data-placeholder="Start typing..."></p>
+            <p id="aceseex" contenteditable style="display:none;">When students wear uniforms, it creates a sense of belonging and unity within the school community. This can lead to a reduction in absenteeism and disciplinary issues because students feel more connected to their school and are less likely to engage in disruptive behavior.</p>
+            <h3>Explain how the evidence supports your answer</h3><br>
+            <h2>Summarize</h2>
+            <p id="acess" contenteditable="true" data-placeholder="Start typing..."></p>
+            <p id="acessex" contenteditable style="display:none;">In summary, requiring students to wear uniforms in school can promote a sense of unity, reduce absenteeism and disciplinary issues, and ultimately create a more positive and inclusive school environment.</p>
+            <h3>Sum up your argument and restate your main point</h3><br>
+            <hr><br>
+            <button class="combBtn" id="combineButton">Combine <i class="fa-solid fa-layer-group" style="color: #000000;"></i></button>
+            <button class="copyBtn" id="copy" onclick="copyToClipboard()">Copy <i class="fa-regular fa-copy" style="color: #000000;"></i></button>
+            <p id="acesdrft" contenteditable="true" data-placeholder="Start typing..."></p>
+            <p id="acesdrftex" contenteditable style="display:none;">Students should be required to wear uniforms in school to promote a sense of unity and discipline. According to a study published in the Journal of Educational Research, schools that require uniforms have lower rates of absenteeism and disciplinary issues. When students wear uniforms, it creates a sense of belonging and unity within the school community. This can lead to a reduction in absenteeism and disciplinary issues because students feel more connected to their school and are less likely to engage in disruptive behavior. In summary, requiring students to wear uniforms in school can promote a sense of unity, reduce absenteeism and disciplinary issues, and ultimately create a more positive and inclusive school environment.</p>
+            <h3>Click combine to compile a draft</h3>
+            </div>
+            <button class="reset" id="resetButton"><i class="fa-regular fa-trash-can" style="color: #000000;"></i></button>
+            <div class="botBan">
+              <a href="https://www.wab-edu.cn" target="_blank"><img src="https://libapps-au.s3-ap-southeast-2.amazonaws.com/customers/721/images/wab_logo_white_300dpi.png" alt="WAB logo"></a>
+              <div class="vl"></div>
+              <h4>This website was made using HTML, CSS, and JavaScript. <a href="https://github.com" target="_blank" style="color: #ffffff;">Github</a></h4>
+            </div>
+            
+    <script>
+var resetButton = document.getElementById("resetButton");
+var combineButton = document.getElementById("combineButton");
+var acesa = document.getElementById("acesa");
+var acesaex = document.getElementById("acesaex");
+var acesc = document.getElementById("acesc");
+var acescex = document.getElementById("acescex");
+var acese = document.getElementById("acese");
+var aceseex = document.getElementById("aceseex");
+var acess = document.getElementById("acess");
+var acessex = document.getElementById("acessex");
+var acesdrft = document.getElementById("acesdrft");
+var acesdrftex = document.getElementById("acesdrftex");
+var originalacesa = acesa.innerHTML;
+var originalacesc = acesc.innerHTML;
+var originalacese = acese.innerHTML;
+var originalacess = acess.innerHTML;
+var originalacesdrft = acesdrft.innerHTML;
+var originalacesaex = acesaex.innerHTML;
+var originalacescex = acescex.innerHTML;
+var originalaceseex = aceseex.innerHTML;
+var originalacessex = acessex.innerHTML;
+var originalacesdrftex = acesdrftex.innerHTML;
+var toggleButton = document.getElementById('toggleButton');
+const copy = document.getElementById("copy");
+const comb = document.getElementById("combineButton");
+var myNav = document.getElementById("myNav");
+const savedacesa = localStorage.getItem("acesa");
+const savedacesc = localStorage.getItem("acesc");
+const savedacese = localStorage.getItem("acese");
+const savedacess = localStorage.getItem("acess");
+const savedacesdrft = localStorage.getItem("acesdrft");
+
+
+if (savedacesa) {
+        acesa.textContent = savedacesa;
+        acesa.removeAttribute("data-placeholder");
+      }
+
+      acesa.addEventListener("input", function() {
+        if (this.textContent.trim() === "") {
+          this.setAttribute("data-placeholder", "Start typing...");
+          localStorage.removeItem("acesa");
+        } else {
+          this.removeAttribute("data-placeholder");
+          localStorage.setItem("acesa", this.textContent);
+        }
+      });
+
+      if (savedacesc) {
+        acesc.textContent = savedacesc;
+        acesc.removeAttribute("data-placeholder");
+      }
+
+      acesc.addEventListener("input", function() {
+        if (this.textContent.trim() === "") {
+          this.setAttribute("data-placeholder", "Start typing...");
+          localStorage.removeItem("acesc");
+        } else {
+          this.removeAttribute("data-placeholder");
+          localStorage.setItem("acesc", this.textContent);
+        }
+      });
+
+      if (savedacese) {
+        acese.textContent = savedacese;
+        acese.removeAttribute("data-placeholder");
+      }
+
+      acese.addEventListener("input", function() {
+        if (this.textContent.trim() === "") {
+          this.setAttribute("data-placeholder", "Start typing...");
+          localStorage.removeItem("acese");
+        } else {
+          this.removeAttribute("data-placeholder");
+          localStorage.setItem("acese", this.textContent);
+        }
+      });
+
+      if (savedacess) {
+        acess.textContent = savedacess;
+        acess.removeAttribute("data-placeholder");
+      }
+
+      acess.addEventListener("input", function() {
+        if (this.textContent.trim() === "") {
+          this.setAttribute("data-placeholder", "Start typing...");
+          localStorage.removeItem("acess");
+        } else {
+          this.removeAttribute("data-placeholder");
+          localStorage.setItem("acess", this.textContent);
+        }
+      });
+
+      if (savedacesdrft) {
+        acesdrft.textContent = savedacesdrft;
+        acesdrft.removeAttribute("data-placeholder");
+      }
+
+      acesdrft.addEventListener("input", function() {
+        if (this.textContent.trim() === "") {
+          this.setAttribute("data-placeholder", "Start typing...");
+          localStorage.removeItem("acesdrft");
+        } else {
+          this.removeAttribute("data-placeholder");
+          localStorage.setItem("acesdrft", this.textContent);
+        }
+      });
+  
+acesa.addEventListener("paste", function(e) {
+  e.preventDefault();
+  const text = e.clipboardData.getData("text/plain");
+  document.execCommand("insertText", false, text);
+  acesa.normalize();
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  const range = document.createRange();
+  range.selectNodeContents(acesa);
+  range.collapse(false);
+  selection.addRange(range);
+});
+
+acesc.addEventListener("paste", function(e) {
+  e.preventDefault();
+  const text = e.clipboardData.getData("text/plain");
+  document.execCommand("insertText", false, text);
+  acesc.normalize();
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  const range = document.createRange();
+  range.selectNodeContents(acesc);
+  range.collapse(false);
+  selection.addRange(range);
+});
+
+acese.addEventListener("paste", function(e) {
+  e.preventDefault();
+  const text = e.clipboardData.getData("text/plain");
+  document.execCommand("insertText", false, text);
+  acese.normalize();
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  const range = document.createRange();
+  range.selectNodeContents(acese);
+  range.collapse(false);
+  selection.addRange(range);
+});
+
+acess.addEventListener("paste", function(e) {
+  e.preventDefault();
+  const text = e.clipboardData.getData("text/plain");
+  document.execCommand("insertText", false, text);
+  acess.normalize();
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  const range = document.createRange();
+  range.selectNodeContents(acess);
+  range.collapse(false);
+  selection.addRange(range);
+});
+
+acesdrft.addEventListener("paste", function(e) {
+  e.preventDefault();
+  const text = e.clipboardData.getData("text/plain");
+  document.execCommand("insertText", false, text);
+  acesdrft.normalize();
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  const range = document.createRange();
+  range.selectNodeContents(acesdrft);
+  range.collapse(false);
+  selection.addRange(range);
+});
+
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+  document.getElementsByClassName("topnav").style = topnav.style;
+}
+
+acesa.addEventListener("input", function() {
+  localStorage.setItem("acesa", acesa.innerHTML);
+});
+
+window.addEventListener("load", function() {
+  var savedContent = localStorage.getItem("acesa");
+  if (savedContent) {
+    acesa.innerHTML = savedContent;
+  }
+});
+
+acesc.addEventListener("input", function() {
+  localStorage.setItem("acesc", acesc.innerHTML);
+});
+
+window.addEventListener("load", function() {
+  var savedContent = localStorage.getItem("acesc");
+  if (savedContent) {
+    acesc.innerHTML = savedContent;
+  }
+});
+
+acese.addEventListener("input", function() {
+  localStorage.setItem("acese", acese.innerHTML);
+});
+
+window.addEventListener("load", function() {
+  var savedContent = localStorage.getItem("acese");
+  if (savedContent) {
+    acese.innerHTML = savedContent;
+  }
+});
+
+acess.addEventListener("input", function() {
+  localStorage.setItem("acess", acess.innerHTML);
+});
+
+window.addEventListener("load", function() {
+  var savedContent = localStorage.getItem("acess");
+  if (savedContent) {
+    acess.innerHTML = savedContent;
+  }
+});
+
+acesdrft.addEventListener("input", function() {
+  localStorage.setItem("acesdrft", acesdrft.innerHTML);
+});
+
+window.addEventListener("load", function() {
+  var savedContent = localStorage.getItem("acesdrft");
+  if (savedContent) {
+    acesdrft.innerHTML = savedContent;
+  }
+});
+
+resetButton.addEventListener("click", function() {
+  acesa.innerHTML = originalacesa;
+  acesaex.innerHTML = originalacesaex;
+  localStorage.removeItem("acesa");
+  acesa.setAttribute("data-placeholder", "Start typing...");
+  acesc.innerHTML = originalacesc;
+  acescex.innerHTML = originalacescex;
+  localStorage.removeItem("acesc");
+  acesc.setAttribute("data-placeholder", "Start typing...");
+  acese.innerHTML = originalacese;
+  aceseex.innerHTML = originalaceseex;
+  localStorage.removeItem("acese");
+  acese.setAttribute("data-placeholder", "Start typing...");
+  acess.innerHTML = originalacess;
+  acessex.innerHTML = originalacessex;
+  localStorage.removeItem("acess");
+  acess.setAttribute("data-placeholder", "Start typing...");
+  acesdrft.innerHTML = originalacesdrft;
+  acesdrftex.innerHTML = originalacesdrftex;
+  localStorage.removeItem("acesdrft");
+  acesdrft.setAttribute("data-placeholder", "Start typing...");
+});
+
+toggleButton.addEventListener("click", function() {
+  if (acesa.style.display === "none") {
+    acesa.style.display = "";
+    acesaex.style.display = "none";
+    acesc.style.display = "";
+    acescex.style.display = "none";
+    acese.style.display = "";
+    aceseex.style.display = "none";
+    acess.style.display = "";
+    acessex.style.display = "none";
+    acesdrft.style.display = "";
+    acesdrftex.style.display = "none";
+  } else {
+    acesa.style.display = "none";
+    acesaex.style.display = "";
+    acesc.style.display = "none";
+    acescex.style.display = "";
+    acese.style.display = "none";
+    aceseex.style.display = "";
+    acess.style.display = "none";
+    acessex.style.display = "";
+    acesdrft.style.display = "none";
+    acesdrftex.style.display = "";
+  }
+});
+
+combineButton.addEventListener("click", function() {
+  acesdrft.innerHTML = acesa.innerHTML + "\n" + acesc.innerHTML + "\n" + acese.innerHTML + "\n" + acess.innerHTML;
+  acesdrft.removeAttribute("data-placeholder");
+  acesdrftex.innerHTML = acesaex.innerHTML + "\n" + acescex.innerHTML + "\n" + aceseex.innerHTML + "\n" + acessex.innerHTML;
+});
+
+function copyToClipboard() {
+    if (acesa.style.display === "none") {
+  const text = document.getElementById("acesdrftex").innerText;
+  navigator.clipboard.writeText(text);
+    } else {
+        const text = document.getElementById("acesdrft").innerText;
+  navigator.clipboard.writeText(text);
+    }
+}
+
+copy.addEventListener("click", function() {
+  copy.classList.remove("copyBtn");
+  copy.classList.add("green");
+  copy.innerHTML = "Copied <i class='fa-solid fa-check' style='color: #000000;'></i>";
+  setTimeout(function() {
+    copy.classList.remove("green");
+    copy.classList.add("copyBtn");
+    copy.innerHTML = "Copy <i class='fa-regular fa-copy' style='color: #000000;'></i>";
+  }, 2000);
+});
+
+comb.addEventListener("click", function() {
+  comb.innerHTML = "Combined <i class='fa-solid fa-check' style='color: #000000;'></i>";
+  setTimeout(function() {
+    comb.innerHTML = "Combine <i class='fa-solid fa-layer-group' style='color: #000000;'></i>";
+  }, 2000);
+});
+</script>
+</body>
+</html>

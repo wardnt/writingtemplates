@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEEL writing template</title>
+    <script src="https://kit.fontawesome.com/a98e96b6de.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="templatestyle.css">
+</head>
+<body>
+  <div class="content">
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="padding: 10px; z-index: 20;">&times;</a>
+    <div class="overlay-content">
+      <a href="./writingtemplates.html" style="font-size: 40px; font-weight: bold; width: 89%; left: 6%; display: inline-block; margin-bottom: 15px;">Home</a><br>
+      <a href="./aces.html">ACES</a>
+      <a href="./cope.html">COPE</a>
+      <a href="./deal.html">DEAL</a>
+      <a href="./peel.html">PEEL</a>
+      <a href="./races.html">RACES</a>
+      <a href="./rain.html">RAIN</a>
+      <a href="./tap.html">TAP</a>
+      <a href="./teel.html"><b>TEEL</b></a>
+      <a> </a>
+    </div>
+  </div>
+  <div class="topBan">
+    <h1>Writing Templates</h1>
+    
+  </div>
+  <div class="par"></div>
+<div class="rec"></div>
+<div class="recpar"></div>
+  <div class="topnav">
+  <span style="cursor:pointer" onclick="openNav()">TEEL <i class="fa-solid fa-caret-down" style="color: #ffffff;"></i></i></span>
+  </div><br><br><br>
+            <h2>Topic</h2>
+            <label class="switch">
+                <h2 style="margin-left: -105px;">Example</h2>
+              <input type="checkbox" id="toggleButton">
+              <span class="slider round"></span>
+          </label>
+            <p id="teelt" contenteditable="true" data-placeholder="Start typing..."></p>
+            <p id="teeltex" contenteditable style="display:none;">Education is essential for personal and societal development.</p>
+            <h3>Start with a topic sentence that introduces the main idea of the paragraph</h3><br>
+            <h2>Evidence/Example</h2>
+            <p id="teele" contenteditable="true" data-placeholder="Start typing..."></p>
+            <p id="teeleex" contenteditable style="display:none;">According to a report by the United Nations, countries with higher levels of education tend to have higher rates of economic growth and better health outcomes.</p>
+            <h3>Provide evidence or examples to support your topic sentence</h3><br>
+            <h2>Explain</h2>
+            <p id="teel2e" contenteditable="true" data-placeholder="Start typing..."></p>
+            <p id="teel2eex" contenteditable style="display:none;">Education helps individuals develop critical thinking skills, which can lead to better decision-making and problem-solving abilities. In turn, this can contribute to improved economic and health outcomes at the societal level.</p>
+            <h3>Explain how your evidence supports your topic sentence</h3><br>
+            <h2>Link</h2>
+            <p id="teell" contenteditable="true" data-placeholder="Start typing..."></p>
+            <p id="teellex" contenteditable style="display:none;">Therefore, it is important to prioritize education in order to promote personal and societal development.</p>
+            <h3>Link your evidence back to your main argument or thesis</h3><br>
+            <hr><br>
+            <button class="combBtn" id="combineButton">Combine <i class="fa-solid fa-layer-group" style="color: #000000;"></i></button>
+            <button class="copyBtn" id="copy" onclick="copyToClipboard()">Copy <i class="fa-regular fa-copy" style="color: #000000;"></i></button>
+            <p id="teeldrft" contenteditable="true" data-placeholder="Start typing..."></p>
+            <p id="teeldrftex" contenteditable style="display:none;">Education is essential for personal and societal development. According to a report by the United Nations, countries with higher levels of education tend to have higher rates of economic growth and better health outcomes. Education helps individuals develop critical thinking skills, which can lead to better decision-making and problem-solving abilities. In turn, this can contribute to improved economic and health outcomes at the societal level. Therefore, it is important to prioritize education in order to promote personal and societal development.</p>
+            <h3>Click combine to compile a draft</h3>
+            </div>
+            <button class="reset" id="resetButton"><i class="fa-regular fa-trash-can" style="color: #000000;"></i></button>
+            <div class="botBan">
+              <a href="https://www.wab-edu.cn" target="_blank"><img src="https://libapps-au.s3-ap-southeast-2.amazonaws.com/customers/721/images/wab_logo_white_300dpi.png" alt="WAB logo"></a>
+              <div class="vl"></div>
+              <h4>This website was made using HTML, CSS, and JavaScript. <a href="https://github.com" target="_blank" style="color: #ffffff;">Github</a></h4>
+            </div>
+            
+    <script>
+var resetButton = document.getElementById("resetButton");
+var combineButton = document.getElementById("combineButton");
+var teelt = document.getElementById("teelt");
+var teeltex = document.getElementById("teeltex");
+var teele = document.getElementById("teele");
+var teeleex = document.getElementById("teeleex");
+var teel2e = document.getElementById("teel2e");
+var teel2eex = document.getElementById("teel2eex");
+var teell = document.getElementById("teell");
+var teellex = document.getElementById("teellex");
+var teeldrft = document.getElementById("teeldrft");
+var teeldrftex = document.getElementById("teeldrftex");
+var originalteelt = teelt.innerHTML;
+var originalteele = teele.innerHTML;
+var originalteel2e = teel2e.innerHTML;
+var originalteell = teell.innerHTML;
+var originalteeldrft = teeldrft.innerHTML;
+var originalteeltex = teeltex.innerHTML;
+var originalteeleex = teeleex.innerHTML;
+var originalteel2eex = teel2eex.innerHTML;
+var originalteellex = teellex.innerHTML;
+var originalteeldrftex = teeldrftex.innerHTML;
+var toggleButton = document.getElementById('toggleButton');
+const copy = document.getElementById("copy");
+const comb = document.getElementById("combineButton");
+var myNav = document.getElementById("myNav");
+const savedteelt = localStorage.getItem("teelt");
+const savedteele = localStorage.getItem("teele");
+const savedteel2e = localStorage.getItem("teel2e");
+const savedteell = localStorage.getItem("teell");
+const savedteeldrft = localStorage.getItem("teeldrft");
+
+
+if (savedteelt) {
+        teelt.textContent = savedteelt;
+        teelt.removeAttribute("data-placeholder");
+      }
+
+      teelt.addEventListener("input", function() {
+        if (this.textContent.trim() === "") {
+          this.setAttribute("data-placeholder", "Start typing...");
+          localStorage.removeItem("teelt");
+        } else {
+          this.removeAttribute("data-placeholder");
+          localStorage.setItem("teelt", this.textContent);
+        }
+      });
+
+      if (savedteele) {
+        teele.textContent = savedteele;
+        teele.removeAttribute("data-placeholder");
+      }
+
+      teele.addEventListener("input", function() {
+        if (this.textContent.trim() === "") {
+          this.setAttribute("data-placeholder", "Start typing...");
+          localStorage.removeItem("teele");
+        } else {
+          this.removeAttribute("data-placeholder");
+          localStorage.setItem("teele", this.textContent);
+        }
+      });
+
+      if (savedteel2e) {
+        teel2e.textContent = savedteel2e;
+        teel2e.removeAttribute("data-placeholder");
+      }
+
+      teel2e.addEventListener("input", function() {
+        if (this.textContent.trim() === "") {
+          this.setAttribute("data-placeholder", "Start typing...");
+          localStorage.removeItem("teel2e");
+        } else {
+          this.removeAttribute("data-placeholder");
+          localStorage.setItem("teel2e", this.textContent);
+        }
+      });
+
+      if (savedteell) {
+        teell.textContent = savedteell;
+        teell.removeAttribute("data-placeholder");
+      }
+
+      teell.addEventListener("input", function() {
+        if (this.textContent.trim() === "") {
+          this.setAttribute("data-placeholder", "Start typing...");
+          localStorage.removeItem("teell");
+        } else {
+          this.removeAttribute("data-placeholder");
+          localStorage.setItem("teell", this.textContent);
+        }
+      });
+
+      if (savedteeldrft) {
+        teeldrft.textContent = savedteeldrft;
+        teeldrft.removeAttribute("data-placeholder");
+      }
+
+      teeldrft.addEventListener("input", function() {
+        if (this.textContent.trim() === "") {
+          this.setAttribute("data-placeholder", "Start typing...");
+          localStorage.removeItem("teeldrft");
+        } else {
+          this.removeAttribute("data-placeholder");
+          localStorage.setItem("teeldrft", this.textContent);
+        }
+      });
+  
+teelt.addEventListener("paste", function(e) {
+  e.preventDefault();
+  const text = e.clipboardData.getData("text/plain");
+  document.execCommand("insertText", false, text);
+  teelt.normalize();
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  const range = document.createRange();
+  range.selectNodeContents(teelt);
+  range.collapse(false);
+  selection.addRange(range);
+});
+
+teele.addEventListener("paste", function(e) {
+  e.preventDefault();
+  const text = e.clipboardData.getData("text/plain");
+  document.execCommand("insertText", false, text);
+  teele.normalize();
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  const range = document.createRange();
+  range.selectNodeContents(teele);
+  range.collapse(false);
+  selection.addRange(range);
+});
+
+teel2e.addEventListener("paste", function(e) {
+  e.preventDefault();
+  const text = e.clipboardData.getData("text/plain");
+  document.execCommand("insertText", false, text);
+  teel2e.normalize();
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  const range = document.createRange();
+  range.selectNodeContents(teel2e);
+  range.collapse(false);
+  selection.addRange(range);
+});
+
+teell.addEventListener("paste", function(e) {
+  e.preventDefault();
+  const text = e.clipboardData.getData("text/plain");
+  document.execCommand("insertText", false, text);
+  teell.normalize();
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  const range = document.createRange();
+  range.selectNodeContents(teell);
+  range.collapse(false);
+  selection.addRange(range);
+});
+
+teeldrft.addEventListener("paste", function(e) {
+  e.preventDefault();
+  const text = e.clipboardData.getData("text/plain");
+  document.execCommand("insertText", false, text);
+  teeldrft.normalize();
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  const range = document.createRange();
+  range.selectNodeContents(teeldrft);
+  range.collapse(false);
+  selection.addRange(range);
+});
+
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+  document.getElementsByClassName("topnav").style = topnav.style;
+}
+
+teelt.addEventListener("input", function() {
+  localStorage.setItem("teelt", teelt.innerHTML);
+});
+
+window.addEventListener("load", function() {
+  var savedContent = localStorage.getItem("teelt");
+  if (savedContent) {
+    teelt.innerHTML = savedContent;
+  }
+});
+
+teele.addEventListener("input", function() {
+  localStorage.setItem("teele", teele.innerHTML);
+});
+
+window.addEventListener("load", function() {
+  var savedContent = localStorage.getItem("teele");
+  if (savedContent) {
+    teele.innerHTML = savedContent;
+  }
+});
+
+teel2e.addEventListener("input", function() {
+  localStorage.setItem("teel2e", teel2e.innerHTML);
+});
+
+window.addEventListener("load", function() {
+  var savedContent = localStorage.getItem("teel2e");
+  if (savedContent) {
+    teel2e.innerHTML = savedContent;
+  }
+});
+
+teell.addEventListener("input", function() {
+  localStorage.setItem("teell", teell.innerHTML);
+});
+
+window.addEventListener("load", function() {
+  var savedContent = localStorage.getItem("teell");
+  if (savedContent) {
+    teell.innerHTML = savedContent;
+  }
+});
+
+teeldrft.addEventListener("input", function() {
+  localStorage.setItem("teeldrft", teeldrft.innerHTML);
+});
+
+window.addEventListener("load", function() {
+  var savedContent = localStorage.getItem("teeldrft");
+  if (savedContent) {
+    teeldrft.innerHTML = savedContent;
+  }
+});
+
+resetButton.addEventListener("click", function() {
+  teelt.innerHTML = originalteelt;
+  teeltex.innerHTML = originalteeltex;
+  localStorage.removeItem("teelt");
+  teelt.setAttribute("data-placeholder", "Start typing...");
+  teele.innerHTML = originalteele;
+  teeleex.innerHTML = originalteeleex;
+  localStorage.removeItem("teele");
+  teele.setAttribute("data-placeholder", "Start typing...");
+  teel2e.innerHTML = originalteel2e;
+  teel2eex.innerHTML = originalteel2eex;
+  localStorage.removeItem("teel2e");
+  teel2e.setAttribute("data-placeholder", "Start typing...");
+  teell.innerHTML = originalteell;
+  teellex.innerHTML = originalteellex;
+  localStorage.removeItem("teell");
+  teell.setAttribute("data-placeholder", "Start typing...");
+  teeldrft.innerHTML = originalteeldrft;
+  teeldrftex.innerHTML = originalteeldrftex;
+  localStorage.removeItem("teeldrft");
+  teeldrft.setAttribute("data-placeholder", "Start typing...");
+});
+
+toggleButton.addEventListener("click", function() {
+  if (teelt.style.display === "none") {
+    teelt.style.display = "";
+    teeltex.style.display = "none";
+    teele.style.display = "";
+    teeleex.style.display = "none";
+    teel2e.style.display = "";
+    teel2eex.style.display = "none";
+    teell.style.display = "";
+    teellex.style.display = "none";
+    teeldrft.style.display = "";
+    teeldrftex.style.display = "none";
+  } else {
+    teelt.style.display = "none";
+    teeltex.style.display = "";
+    teele.style.display = "none";
+    teeleex.style.display = "";
+    teel2e.style.display = "none";
+    teel2eex.style.display = "";
+    teell.style.display = "none";
+    teellex.style.display = "";
+    teeldrft.style.display = "none";
+    teeldrftex.style.display = "";
+  }
+});
+
+combineButton.addEventListener("click", function() {
+  teeldrft.innerHTML = teelt.innerHTML + "\n" + teele.innerHTML + "\n" + teel2e.innerHTML + "\n" + teell.innerHTML;
+  teeldrft.removeAttribute("data-placeholder");
+  teeldrftex.innerHTML = teeltex.innerHTML + "\n" + teeleex.innerHTML + "\n" + teel2eex.innerHTML + "\n" + teellex.innerHTML;
+});
+
+function copyToClipboard() {
+    if (teelt.style.display === "none") {
+  const text = document.getElementById("teeldrftex").innerText;
+  navigator.clipboard.writeText(text);
+    } else {
+        const text = document.getElementById("teeldrft").innerText;
+  navigator.clipboard.writeText(text);
+    }
+}
+
+copy.addEventListener("click", function() {
+  copy.classList.remove("copyBtn");
+  copy.classList.add("green");
+  copy.innerHTML = "Copied <i class='fa-solid fa-check' style='color: #000000;'></i>";
+  setTimeout(function() {
+    copy.classList.remove("green");
+    copy.classList.add("copyBtn");
+    copy.innerHTML = "Copy <i class='fa-regular fa-copy' style='color: #000000;'></i>";
+  }, 2000);
+});
+
+comb.addEventListener("click", function() {
+  comb.innerHTML = "Combined <i class='fa-solid fa-check' style='color: #000000;'></i>";
+  setTimeout(function() {
+    comb.innerHTML = "Combine <i class='fa-solid fa-layer-group' style='color: #000000;'></i>";
+  }, 2000);
+});
+</script>
+</body>
+</html>

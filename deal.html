@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEAL writing template</title>
+    <script src="https://kit.fontawesome.com/a98e96b6de.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="templatestyle.css">
+</head>
+<body>
+  <div class="content">
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="padding: 10px; z-index: 20;">&times;</a>
+    <div class="overlay-content">
+      <a href="./writingtemplates.html" style="font-size: 40px; font-weight: bold; width: 89%; left: 6%; display: inline-block; margin-bottom: 15px;">Home</a><br>
+      <a href="./aces.html">ACES</a>
+      <a href="./cope.html">COPE</a>
+      <a href="./deal.html"><b>DEAL</b></a>
+      <a href="./peel.html">PEEL</a>
+      <a href="./races.html">RACES</a>
+      <a href="./rain.html">RAIN</a>
+      <a href="./tap.html">TAP</a>
+      <a href="./teel.html">TEEL</a>
+      <a> </a>
+    </div>
+  </div>
+  <div class="topBan">
+    <h1>Writing Templates</h1>
+    
+  </div>
+  <div class="par"></div>
+<div class="rec"></div>
+<div class="recpar"></div>
+  <div class="topnav">
+  <span style="cursor:pointer" onclick="openNav()">DEAL <i class="fa-solid fa-caret-down" style="color: #ffffff;"></i></i></span>
+  </div><br><br>
+            <h2>Define the problem</h2>
+            <label class="switch">
+                <h2 style="margin-left: -105px;">Example</h2>
+              <input type="checkbox" id="toggleButton">
+              <span class="slider round"></span>
+          </label>
+            <p id="deald" contenteditable="true" data-placeholder="Start typing..."></p>
+            <p id="dealdex" contenteditable style="display:none;">Social media can have a negative impact on mental health by contributing to feelings of anxiety and depression.</p>
+            <h3>Clearly state the issue or problem you will be addressing</h3><br>
+            <h2>Explain the causes</h2>
+            <p id="deale" contenteditable="true" data-placeholder="Start typing..."></p>
+            <p id="dealeex" contenteditable style="display:none;">Social media can create unrealistic expectations and foster feelings of inadequacy.</p>
+            <h3>Identify the underlying causes of the problem</h3><br>
+            <h2>Analyze the effects</h2>
+            <p id="deala" contenteditable="true" data-placeholder="Start typing..."></p>
+            <p id="dealaex" contenteditable style="display:none;">Overuse of social media can lead to decreased self-esteem and increased feelings of loneliness.</p>
+            <h3>Discuss the consequences or effects of the problem</h3><br>
+            <h2>List the possible solutions</h2>
+            <p id="deall" contenteditable="true" data-placeholder="Start typing..."></p>
+            <p id="deallex" contenteditable style="display:none;">Limit social media use, take breaks from technology, and engage in activities that promote mental and emotional wellness.</p>
+            <h3>Offer potential solutions or recommendations to address the problem</h3><br>
+            <hr><br>
+            <button class="combBtn" id="combineButton">Combine <i class="fa-solid fa-layer-group" style="color: #000000;"></i></button>
+            <button class="copyBtn" id="copy" onclick="copyToClipboard()">Copy <i class="fa-regular fa-copy" style="color: #000000;"></i></button>
+            <p id="dealdrft" contenteditable="true" data-placeholder="Start typing..."></p>
+            <p id="dealdrftex" contenteditable style="display:none;">Social media can have a negative impact on mental health by contributing to feelings of anxiety and depression. Social media can create unrealistic expectations and foster feelings of inadequacy. Overuse of social media can lead to decreased self-esteem and increased feelings of loneliness. Limit social media use, take breaks from technology, and engage in activities that promote mental and emotional wellness.</p>
+            <h3>Click combine to compile a draft</h3>
+            </div>
+            <button class="reset" id="resetButton"><i class="fa-regular fa-trash-can" style="color: #000000;"></i></button>
+            <div class="botBan">
+              <a href="https://www.wab-edu.cn" target="_blank"><img src="https://libapps-au.s3-ap-southeast-2.amazonaws.com/customers/721/images/wab_logo_white_300dpi.png" alt="WAB logo"></a>
+              <div class="vl"></div>
+              <h4>This website was made using HTML, CSS, and JavaScript. <a href="https://github.com" target="_blank" style="color: #ffffff;">Github</a></h4>
+            </div>
+            
+    <script>
+var resetButton = document.getElementById("resetButton");
+var combineButton = document.getElementById("combineButton");
+var deald = document.getElementById("deald");
+var dealdex = document.getElementById("dealdex");
+var deale = document.getElementById("deale");
+var dealeex = document.getElementById("dealeex");
+var deala = document.getElementById("deala");
+var dealaex = document.getElementById("dealaex");
+var deall = document.getElementById("deall");
+var deallex = document.getElementById("deallex");
+var dealdrft = document.getElementById("dealdrft");
+var dealdrftex = document.getElementById("dealdrftex");
+var originaldeald = deald.innerHTML;
+var originaldeale = deale.innerHTML;
+var originaldeala = deala.innerHTML;
+var originaldeall = deall.innerHTML;
+var originaldealdrft = dealdrft.innerHTML;
+var originaldealdex = dealdex.innerHTML;
+var originaldealeex = dealeex.innerHTML;
+var originaldealaex = dealaex.innerHTML;
+var originaldeallex = deallex.innerHTML;
+var originaldealdrftex = dealdrftex.innerHTML;
+var toggleButton = document.getElementById('toggleButton');
+const copy = document.getElementById("copy");
+const comb = document.getElementById("combineButton");
+var myNav = document.getElementById("myNav");
+const saveddeald = localStorage.getItem("deald");
+const saveddeale = localStorage.getItem("deale");
+const saveddeala = localStorage.getItem("deala");
+const saveddeall = localStorage.getItem("deall");
+const saveddealdrft = localStorage.getItem("dealdrft");
+
+
+if (saveddeald) {
+        deald.textContent = saveddeald;
+        deald.removeAttribute("data-placeholder");
+      }
+
+      deald.addEventListener("input", function() {
+        if (this.textContent.trim() === "") {
+          this.setAttribute("data-placeholder", "Start typing...");
+          localStorage.removeItem("deald");
+        } else {
+          this.removeAttribute("data-placeholder");
+          localStorage.setItem("deald", this.textContent);
+        }
+      });
+
+      if (saveddeale) {
+        deale.textContent = saveddeale;
+        deale.removeAttribute("data-placeholder");
+      }
+
+      deale.addEventListener("input", function() {
+        if (this.textContent.trim() === "") {
+          this.setAttribute("data-placeholder", "Start typing...");
+          localStorage.removeItem("deale");
+        } else {
+          this.removeAttribute("data-placeholder");
+          localStorage.setItem("deale", this.textContent);
+        }
+      });
+
+      if (saveddeala) {
+        deala.textContent = saveddeala;
+        deala.removeAttribute("data-placeholder");
+      }
+
+      deala.addEventListener("input", function() {
+        if (this.textContent.trim() === "") {
+          this.setAttribute("data-placeholder", "Start typing...");
+          localStorage.removeItem("deala");
+        } else {
+          this.removeAttribute("data-placeholder");
+          localStorage.setItem("deala", this.textContent);
+        }
+      });
+
+      if (saveddeall) {
+        deall.textContent = saveddeall;
+        deall.removeAttribute("data-placeholder");
+      }
+
+      deall.addEventListener("input", function() {
+        if (this.textContent.trim() === "") {
+          this.setAttribute("data-placeholder", "Start typing...");
+          localStorage.removeItem("deall");
+        } else {
+          this.removeAttribute("data-placeholder");
+          localStorage.setItem("deall", this.textContent);
+        }
+      });
+
+      if (saveddealdrft) {
+        dealdrft.textContent = saveddealdrft;
+        dealdrft.removeAttribute("data-placeholder");
+      }
+
+      dealdrft.addEventListener("input", function() {
+        if (this.textContent.trim() === "") {
+          this.setAttribute("data-placeholder", "Start typing...");
+          localStorage.removeItem("dealdrft");
+        } else {
+          this.removeAttribute("data-placeholder");
+          localStorage.setItem("dealdrft", this.textContent);
+        }
+      });
+  
+deald.addEventListener("paste", function(e) {
+  e.preventDefault();
+  const text = e.clipboardData.getData("text/plain");
+  document.execCommand("insertText", false, text);
+  deald.normalize();
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  const range = document.createRange();
+  range.selectNodeContents(deald);
+  range.collapse(false);
+  selection.addRange(range);
+});
+
+deale.addEventListener("paste", function(e) {
+  e.preventDefault();
+  const text = e.clipboardData.getData("text/plain");
+  document.execCommand("insertText", false, text);
+  deale.normalize();
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  const range = document.createRange();
+  range.selectNodeContents(deale);
+  range.collapse(false);
+  selection.addRange(range);
+});
+
+deala.addEventListener("paste", function(e) {
+  e.preventDefault();
+  const text = e.clipboardData.getData("text/plain");
+  document.execCommand("insertText", false, text);
+  deala.normalize();
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  const range = document.createRange();
+  range.selectNodeContents(deala);
+  range.collapse(false);
+  selection.addRange(range);
+});
+
+deall.addEventListener("paste", function(e) {
+  e.preventDefault();
+  const text = e.clipboardData.getData("text/plain");
+  document.execCommand("insertText", false, text);
+  deall.normalize();
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  const range = document.createRange();
+  range.selectNodeContents(deall);
+  range.collapse(false);
+  selection.addRange(range);
+});
+
+dealdrft.addEventListener("paste", function(e) {
+  e.preventDefault();
+  const text = e.clipboardData.getData("text/plain");
+  document.execCommand("insertText", false, text);
+  dealdrft.normalize();
+  const selection = window.getSelection();
+  selection.removeAllRanges();
+  const range = document.createRange();
+  range.selectNodeContents(dealdrft);
+  range.collapse(false);
+  selection.addRange(range);
+});
+
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+  document.getElementsByClassName("topnav").style = topnav.style;
+}
+
+deald.addEventListener("input", function() {
+  localStorage.setItem("deald", deald.innerHTML);
+});
+
+window.addEventListener("load", function() {
+  var savedContent = localStorage.getItem("deald");
+  if (savedContent) {
+    deald.innerHTML = savedContent;
+  }
+});
+
+deale.addEventListener("input", function() {
+  localStorage.setItem("deale", deale.innerHTML);
+});
+
+window.addEventListener("load", function() {
+  var savedContent = localStorage.getItem("deale");
+  if (savedContent) {
+    deale.innerHTML = savedContent;
+  }
+});
+
+deala.addEventListener("input", function() {
+  localStorage.setItem("deala", deala.innerHTML);
+});
+
+window.addEventListener("load", function() {
+  var savedContent = localStorage.getItem("deala");
+  if (savedContent) {
+    deala.innerHTML = savedContent;
+  }
+});
+
+deall.addEventListener("input", function() {
+  localStorage.setItem("deall", deall.innerHTML);
+});
+
+window.addEventListener("load", function() {
+  var savedContent = localStorage.getItem("deall");
+  if (savedContent) {
+    deall.innerHTML = savedContent;
+  }
+});
+
+dealdrft.addEventListener("input", function() {
+  localStorage.setItem("dealdrft", dealdrft.innerHTML);
+});
+
+window.addEventListener("load", function() {
+  var savedContent = localStorage.getItem("dealdrft");
+  if (savedContent) {
+    dealdrft.innerHTML = savedContent;
+  }
+});
+
+resetButton.addEventListener("click", function() {
+  deald.innerHTML = originaldeald;
+  dealdex.innerHTML = originaldealdex;
+  localStorage.removeItem("deald");
+  deald.setAttribute("data-placeholder", "Start typing...");
+  deale.innerHTML = originaldeale;
+  dealeex.innerHTML = originaldealeex;
+  localStorage.removeItem("deale");
+  deale.setAttribute("data-placeholder", "Start typing...");
+  deala.innerHTML = originaldeala;
+  dealaex.innerHTML = originaldealaex;
+  localStorage.removeItem("deala");
+  deala.setAttribute("data-placeholder", "Start typing...");
+  deall.innerHTML = originaldeall;
+  deallex.innerHTML = originaldeallex;
+  localStorage.removeItem("deall");
+  deall.setAttribute("data-placeholder", "Start typing...");
+  dealdrft.innerHTML = originaldealdrft;
+  dealdrftex.innerHTML = originaldealdrftex;
+  localStorage.removeItem("dealdrft");
+  dealdrft.setAttribute("data-placeholder", "Start typing...");
+});
+
+toggleButton.addEventListener("click", function() {
+  if (deald.style.display === "none") {
+    deald.style.display = "";
+    dealdex.style.display = "none";
+    deale.style.display = "";
+    dealeex.style.display = "none";
+    deala.style.display = "";
+    dealaex.style.display = "none";
+    deall.style.display = "";
+    deallex.style.display = "none";
+    dealdrft.style.display = "";
+    dealdrftex.style.display = "none";
+  } else {
+    deald.style.display = "none";
+    dealdex.style.display = "";
+    deale.style.display = "none";
+    dealeex.style.display = "";
+    deala.style.display = "none";
+    dealaex.style.display = "";
+    deall.style.display = "none";
+    deallex.style.display = "";
+    dealdrft.style.display = "none";
+    dealdrftex.style.display = "";
+  }
+});
+
+combineButton.addEventListener("click", function() {
+  dealdrft.innerHTML = deald.innerHTML + "\n" + deale.innerHTML + "\n" + deala.innerHTML + "\n" + deall.innerHTML;
+  dealdrft.removeAttribute("data-placeholder");
+  dealdrftex.innerHTML = dealdex.innerHTML + "\n" + dealeex.innerHTML + "\n" + dealaex.innerHTML + "\n" + deallex.innerHTML;
+});
+
+function copyToClipboard() {
+    if (deald.style.display === "none") {
+  const text = document.getElementById("dealdrftex").innerText;
+  navigator.clipboard.writeText(text);
+    } else {
+        const text = document.getElementById("dealdrft").innerText;
+  navigator.clipboard.writeText(text);
+    }
+}
+
+copy.addEventListener("click", function() {
+  copy.classList.remove("copyBtn");
+  copy.classList.add("green");
+  copy.innerHTML = "Copied <i class='fa-solid fa-check' style='color: #000000;'></i>";
+  setTimeout(function() {
+    copy.classList.remove("green");
+    copy.classList.add("copyBtn");
+    copy.innerHTML = "Copy <i class='fa-regular fa-copy' style='color: #000000;'></i>";
+  }, 2000);
+});
+
+comb.addEventListener("click", function() {
+  comb.innerHTML = "Combined <i class='fa-solid fa-check' style='color: #000000;'></i>";
+  setTimeout(function() {
+    comb.innerHTML = "Combine <i class='fa-solid fa-layer-group' style='color: #000000;'></i>";
+  }, 2000);
+});
+</script>
+</body>
+</html>
