@@ -207,6 +207,7 @@ hr {
   font-size: 18px;
   font-weight: 400;
   cursor: pointer;
+  color: #000000;
   }
   .combBtn:hover {
     background-color: #f0f0f0;
@@ -220,6 +221,7 @@ hr {
   font-size: 18px;
   font-weight: 400;
   cursor: pointer;
+  color: #000000;
   }
   .copyBtn:hover {
     background-color: #f0f0f0;
@@ -232,6 +234,7 @@ hr {
   background-color: #3fb17b;
   font-size: 18px;
   font-weight: 400;
+  color: #000000;
 }
 .reset {
   height: 70px;
@@ -245,6 +248,7 @@ hr {
   float: right;
   margin: 40px 20px 20px auto;
   cursor: pointer;
+  text-align: center;
 }
 .reset:hover {
   background-color: #9b9b9b;
