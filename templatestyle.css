@@ -248,8 +248,11 @@ hr {
   float: right;
   margin: 40px 20px 20px auto;
   cursor: pointer;
-  text-align: center;
   padding: 0;
+}
+button.reset i {
+  padding: auto;
+  text-align: center;
 }
 .reset:hover {
   background-color: #9b9b9b;
