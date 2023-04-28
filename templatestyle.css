@@ -419,6 +419,10 @@ h5 {
   width: 60px;
   font-size: 30px;
   }
+  .reset i {
+    padding: auto;
+    text-align: center;
+  }
 }
 @media screen and (max-width: 570px) {
   .par {
