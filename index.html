@@ -28,15 +28,30 @@
   </div>
   <div class="topBan">
     <h1>Writing Templates</h1>
-    
   </div>
   <div class="par"></div>
 <div class="rec"></div>
 <div class="recpar"></div>
   <div class="topnav">
   <span style="cursor:pointer" onclick="openNav()">Templates <i class="fa-solid fa-caret-down" style="color: #ffffff;"></i></i></span>
+  <button class="open-btn" id="btn1" style="margin-right: 10px;">Contact</button>
+  <button class="open-btn" id="btn2" style="margin-left: 0;">About</button>
+  
+  <div id="popup1" class="popup">
+    <h1>Contact</h1>
+    <p>Don’t see your preferred writing method? Contact me with my email (25nathanw@wab.edu) and send me the method along with its instructions, and I’ll be sure to add it as soon as possible. If you have any comments or suggestions you can also contact me through my email. I hope you find this website helpful, and be sure to share it with others if you do!</p>
+    <button class="close-btn">Close</button>
   </div>
-            <h5>This website is a tool that contains templates for most of the basic writing structures. By clicking on the Templates dropdown above you can select one of the templates from the list. Add what you need to each section and refer to the instructions below the box if you're unsure how to proceed. If you need a sample of that method you can click on the Example switch to see one. Once you’ve finished your writing you can click on the Combine button to compile a draft. Make whatever edits you need to make, then click the Copy button and the text will be copied to your clipboard. There’s no need to worry about losing any progress or work, as all writing is saved to your browser’s local storage. Clicking on the delete button will reset the template and remove all saves for it. This website was programmed by me as a design project for school. It was made as a support tool to help students and teachers with their writing tasks. ChatGPT was used to generate a list of common writing methods along with their respective instructions and examples. Don’t see your preferred writing method? Contact me with my email (25nathanw@wab.edu) and send me the method along with its instructions, and I’ll be sure to add it as soon as possible. If you have any comments or suggestions you can also contact me through my email. I hope you find this website helpful, and be sure to share it with others if you do!
+  
+  <div id="popup2" class="popup">
+    <h1>About</h1>
+    <p>This website was programmed by me as a design project for school. It was made as a support tool to help students and teachers with their writing tasks. ChatGPT was used to generate a list of common writing methods along with their respective instructions and examples.</p>
+    <button class="close-btn">Close</button>
+  </div>
+  
+  <div id="overlaypopup"></div>
+  </div>
+            <h5>This website is a tool that contains templates for most of the basic writing structures. By clicking on the Templates dropdown above you can select one of the templates from the list. Add what you need to each section and refer to the instructions below the box if you're unsure how to proceed. If you need a sample of that method you can click on the Example switch to see one. Once you’ve finished your writing you can click on the Combine button to compile a draft. Make whatever edits you need to make, then click the Copy button and the text will be copied to your clipboard. There’s no need to worry about losing any progress or work, as all writing is saved to your browser’s local storage. Clicking on the delete button will reset the template and remove all saves for it.
             </h5>
           </div>
             <div class="botBan">
@@ -47,6 +62,30 @@
             
     <script>
 var myNav = document.getElementById("myNav");
+const btn1 = document.getElementById("btn1");
+const btn2 = document.getElementById("btn2");
+const popup1 = document.getElementById("popup1");
+const popup2 = document.getElementById("popup2");
+const overlaypopup = document.getElementById("overlaypopup");
+const closeBtns = document.querySelectorAll(".close-btn");
+
+btn1.addEventListener("click", function() {
+  popup1.style.display = "block";
+  overlaypopup.style.display = "block";
+});
+
+btn2.addEventListener("click", function() {
+  popup2.style.display = "block";
+  overlaypopup.style.display = "block";
+});
+
+for (let i = 0; i < closeBtns.length; i++) {
+  closeBtns[i].addEventListener("click", function() {
+    popup1.style.display = "none";
+    popup2.style.display = "none";
+    overlaypopup.style.display = "none";
+  });
+}
 
 function openNav() {
   document.getElementById("myNav").style.height = "100%";

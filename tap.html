@@ -35,6 +35,22 @@
 <div class="recpar"></div>
   <div class="topnav">
   <span style="cursor:pointer" onclick="openNav()">TAP <i class="fa-solid fa-caret-down" style="color: #ffffff;"></i></i></span>
+  <button class="open-btn" id="btn1" style="margin-right: 10px;">Contact</button>
+  <button class="open-btn" id="btn2" style="margin-left: 0;">About</button>
+  
+  <div id="popup1" class="popup">
+    <h1>Contact</h1>
+    <p>Don’t see your preferred writing method? Contact me with my email (25nathanw@wab.edu) and send me the method along with its instructions, and I’ll be sure to add it as soon as possible. If you have any comments or suggestions you can also contact me through my email. I hope you find this website helpful, and be sure to share it with others if you do!</p>
+    <button class="close-btn">Close</button>
+  </div>
+  
+  <div id="popup2" class="popup">
+    <h1>About</h1>
+    <p>This website was programmed by me as a design project for school. It was made as a support tool to help students and teachers with their writing tasks. ChatGPT was used to generate a list of common writing methods along with their respective instructions and examples.</p>
+    <button class="close-btn">Close</button>
+  </div>
+  
+  <div id="overlaypopup"></div>
   </div><br><br>
             <h2>Topic</h2>
             <label class="switch">
@@ -94,7 +110,30 @@ const savedtapt = localStorage.getItem("tapt");
 const savedtapa = localStorage.getItem("tapa");
 const savedtapp = localStorage.getItem("tapp");
 const savedtapdrft = localStorage.getItem("tapdrft");
+const btn1 = document.getElementById("btn1");
+const btn2 = document.getElementById("btn2");
+const popup1 = document.getElementById("popup1");
+const popup2 = document.getElementById("popup2");
+const overlaypopup = document.getElementById("overlaypopup");
+const closeBtns = document.querySelectorAll(".close-btn");
 
+btn1.addEventListener("click", function() {
+  popup1.style.display = "block";
+  overlaypopup.style.display = "block";
+});
+
+btn2.addEventListener("click", function() {
+  popup2.style.display = "block";
+  overlaypopup.style.display = "block";
+});
+
+for (let i = 0; i < closeBtns.length; i++) {
+  closeBtns[i].addEventListener("click", function() {
+    popup1.style.display = "none";
+    popup2.style.display = "none";
+    overlaypopup.style.display = "none";
+  });
+}
 
 if (savedtapt) {
         tapt.textContent = savedtapt;
