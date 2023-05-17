@@ -56,18 +56,90 @@ h1 {
 }
 .topnav {
 background-color: #000000;
-height: 26px;
+height: 34px;
 position: sticky;
 top: 0;
 left: 0;
 z-index: 10;
 color: #ffffff;
 font-size: 23px;
-padding: 5px 0px 3px 8px;
+padding: 0 0 0 8px;
 margin: 0;
 }
 .topnav span:hover {
   color: #e8e8e8;
+}
+.topnav span {
+  display: inline-block;
+  margin-top: 5px;
+  background-color: #000000;
+}
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+  background-color: white;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px #00000033;
+  display: none;
+}
+.popup p {
+  text-align: center;
+  font-size: 23px;
+  color: #000000;
+  border: none;
+  margin: auto;
+  width: auto;
+}
+.popup h1 {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-size: 45px;
+  color: #000000;
+}
+#overlaypopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #1d1d1de3;
+  z-index: 98;
+  display: none;
+}
+.open-btn {
+  background-color: #000000;
+  position: sticky;
+  z-index: 10;
+  color: #ffffff;
+  font-size: 23px;
+  padding: 0 0 0 15px;
+  margin-top: 4px;
+  float: right;
+  border: 0;
+  cursor: pointer;
+}
+.open-btn:hover {
+  color: #e8e8e8;
+}
+.close-btn {
+  color: #000000;
+  background-color: #ffffff;
+  font-size: 23px;
+  border: 3px solid #676767;
+  border-radius: 15px;
+  margin: 10px 30px 10px auto;
+  padding: 10px;
+  width: 200px;
+  margin: 10px 250px;
+  cursor: pointer;
+}
+.close-btn:hover {
+  background-color: #f0f0f0;
 }
 .overlay {
 height: 0%;
@@ -112,8 +184,15 @@ z-index: 20;
 text-decoration: none; 
 color: #ffffff;
 }
+.marginbox {
+  height: auto;
+  width: 50%;
+  background-color: none;
+  padding: 0;
+  margin: 0 auto;
+}
 h2 {
-  margin: 0 25%;
+  margin: 0;
   display: inline-block;
   font-size: 23px;
   padding: 0px;
@@ -124,7 +203,6 @@ h2 {
   width: 45px;
   height: 25.5px;
   float: right;
-  margin-right: 25%;
   }  
   .switch input {
   opacity: 0;
@@ -178,7 +256,7 @@ p {
   padding: 10px;
   display: block;
   border: 1.5px solid #676767;
-  margin: 8px 25% 3px 25%;
+  margin: 8px 0 3px 0;
   font-weight: 400;
   font-size: 18px;
 }
@@ -192,14 +270,14 @@ h3 {
   font-size: 16px;
   font-weight: 400;
   padding: 0px 11px;
-  margin: 0px 25%;
+  margin: 0;
 }
 hr {
-  width: 50%;
+  width: auto;
   border: 1px solid #676767;
 }
 .combBtn {
-  margin-left: 25%;
+  margin: 0;
   border-radius: 5px;
   display: inline-block;
   background-color: #ffffff;
@@ -214,7 +292,7 @@ hr {
 }
 .copyBtn {
   float: right;
-  margin-right: 25%;
+  margin: 0;
   border-radius: 5px;
   border: 1.5px solid #676767;
   background-color: #ffffff;
@@ -228,7 +306,7 @@ hr {
 }
 .green {
   float: right;
-  margin-right: 25%;
+  margin: 0;
   border-radius: 5px;
   border: 1.5px solid #3fb17b;
   background-color: #3fb17b;
@@ -300,76 +378,6 @@ h5 {
   color: #676767;
   font-weight: 400;
 }
-.popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 99;
-  background-color: white;
-  padding: 10px;
-  border-radius: 20px;
-  box-shadow: 0 2px 4px #00000033;
-  display: none;
-}
-.popup p {
-  text-align: center;
-  font-size: 23px;
-  color: #000000;
-  border: none;
-  margin: auto;
-  width: auto;
-}
-.popup h1 {
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  font-size: 45px;
-  color: #000000;
-}
-#overlaypopup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: #1d1d1de3;
-  z-index: 98;
-  display: none;
-}
-.open-btn {
-  background-color: #000000;
-  height: 25px;
-  position: sticky;
-  top: 0;
-  right: 0;
-  z-index: 10;
-  color: #ffffff;
-  font-size: 23px;
-  padding: 0 0 0 15px;
-  margin: 0;
-  float: right;
-  border: 0;
-  cursor: pointer;
-}
-.open-btn:hover {
-  color: #e8e8e8;
-}
-.close-btn {
-  color: #000000;
-  background-color: #ffffff;
-  font-size: 23px;
-  border: 3px solid #676767;
-  border-radius: 15px;
-  margin: 10px 30px 10px auto;
-  padding: 10px;
-  width: 200px;
-  margin: 10px 250px;
-  cursor: pointer;
-}
-.close-btn:hover {
-  background-color: #f0f0f0;
-}
 @media screen and (max-width: 1130px) {
 .topBan {
   height: 75px;
@@ -387,29 +395,8 @@ height: 80px;
   right: 40px;
   width: 14.5vw;
 }
-h2 {
-  margin: 0 20%;
-}
-.switch {
-  margin-right: 20%;
-}
-p {
-  margin: 8px 20% 3px 20%;
-}
-h3 {
-  margin-left: 20%;
-}
-hr {
-  width: 60%;
-}
-.combBtn {
-  margin-left: 20%;
-}
-.copyBtn {
-  margin-right: 20%;
-}
-.green {
-  margin-right: 20%;
+.marginbox {
+  width: 565px;
 }
 .overlay-content a {
   width: 29.33333%;
@@ -429,30 +416,6 @@ width: 11vw
 .recpar {
 width: 12vw;
 right: 40px;
-}
-h2 {
-  margin: 0 15%;
-}
-.switch {
-  margin-right: 15%;
-}
-p {
-  margin: 8px 15% 3px 15%;
-}
-h3 {
-  margin-left: 15%;
-}
-hr {
-  width: 70%;
-}
-.combBtn {
-  margin-left: 15%;
-}
-.copyBtn {
-  margin-right: 15%;
-}
-.green {
-  margin-right: 15%;
 }
 .overlay-content a {
   width: 44%;
@@ -504,6 +467,12 @@ h5 {
     width: 400px;
   }
 }
+@media screen and (max-width: 595px) {
+.marginbox {
+  width: auto;
+  margin: 0 15px;
+}
+}
 @media screen and (max-width: 570px) {
   .par {
     height: 120px;
@@ -522,32 +491,6 @@ h5 {
     height: 120px;
     right: 60px;
     width: 65px;
-  }
-  h2 {
-    margin: 0 15px;
-  }
-  .switch {
-    margin-right: 15px;
-  }
-  p {
-    margin: 8px 15px 3px 15px;
-  }
-  h3 {
-    margin-left: 15px;
-  }
-  hr {
-    margin-left: 15px;
-    margin-right: 15px;
-  width: auto;
-  }
-  .combBtn {
-    margin-left: 15px;
-  }
-  .copyBtn {
-    margin-right: 15px;
-  }
-  .green {
-    margin-right: 15px;
   }
   .reset {
   margin: 20px 15px 15px auto;

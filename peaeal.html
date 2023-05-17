@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PEAEAL writing template</title>
     <script src="https://kit.fontawesome.com/a98e96b6de.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="templatestyle2.css">
+    <link rel="stylesheet" href="templatestyle3.css">
     <link rel="shortcut icon" type="x-icon" href="writetemp.png">
 </head>
 <body>
@@ -15,18 +15,13 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="padding: 10px; z-index: 20;">&times;</a>
     <div class="overlay-content">
       <a href="./" style="font-size: 40px; font-weight: bold; width: 89%; left: 6%; display: inline-block; margin-bottom: 15px;">Home</a><br>
-      <a href="./aces.html">ACES</a>
-      <a href="./cope.html">COPE</a>
-      <a href="./deal.html">DEAL</a>
       <a href="./opvl.html">OPVL</a>
       <a href="./peaeal.html"><b>PEAEAL</b></a>
       <a href="./peel.html">PEEL</a>
       <a href="./races.html">RACES</a>
-      <a href="./rain.html">RAIN</a>
-      <a href="./tap.html">TAP</a>
       <a href="./teaeal.html">TEAEAL</a>
       <a href="./teel.html">TEEL</a>
-      <a> </a><a> </a><a> </a>
+      <a> </a><a> </a>
     </div>
   </div>
   <div class="topBan">
@@ -40,7 +35,6 @@
   <span style="cursor:pointer" onclick="openNav()">PEAEAL <i class="fa-solid fa-caret-down" style="color: #ffffff;"></i></i></span>
   <button class="open-btn" id="btn1" style="margin-right: 10px;">Contact</button>
   <button class="open-btn" id="btn2" style="margin-left: 0;">About</button>
-  
   <div id="popup1" class="popup">
     <h1>Contact</h1>
     <p>Don’t see your preferred writing method? Contact me with my email (25nathanw@wab.edu) and send me the method along with its instructions, and I’ll be sure to add it as soon as possible. If you have any comments or suggestions you can also contact me through my email. I hope you find this website helpful, and be sure to share it with others if you do!</p>
@@ -52,9 +46,8 @@
     <p>This website was programmed by me as a design project for school. It was made as a support tool to help students and teachers with their writing tasks. ChatGPT was used to generate a list of common writing methods along with their respective instructions and examples.</p>
     <button class="close-btn">Close</button>
   </div>
-  
   <div id="overlaypopup"></div>
-  </div><br><br>
+  </div><br><br><div class="marginbox">
             <h2>Point</h2>
             <label class="switch">
                 <h2 style="margin-left: -105px;">Example</h2>
@@ -100,384 +93,50 @@
             </div>
             
     <script>
-var resetButton = document.getElementById("resetButton");
-var combineButton = document.getElementById("combineButton");
-var peaeal1 = document.getElementById("peaeal1");
-var peaeal1ex = document.getElementById("peaeal1ex");
-var peaeal2 = document.getElementById("peaeal2");
-var peaeal2ex = document.getElementById("peaeal2ex");
-var peaeal3 = document.getElementById("peaeal3");
-var peaeal3ex = document.getElementById("peaeal3ex");
-var peaeal4 = document.getElementById("peaeal4");
-var peaeal4ex = document.getElementById("peaeal4ex");
-var peaeal5 = document.getElementById("peaeal5");
-var peaeal5ex = document.getElementById("peaeal5ex");
-var peaeal6 = document.getElementById("peaeal6");
-var peaeal6ex = document.getElementById("peaeal6ex");
-var peaealdrft = document.getElementById("peaealdrft");
-var peaealdrftex = document.getElementById("peaealdrftex");
-var originalpeaeal1 = peaeal1.innerHTML;
-var originalpeaeal2 = peaeal2.innerHTML;
-var originalpeaeal3 = peaeal3.innerHTML;
-var originalpeaeal4 = peaeal4.innerHTML;
-var originalpeaeal5 = peaeal5.innerHTML;
-var originalpeaeal6 = peaeal6.innerHTML;
-var originalpeaealdrft = peaealdrft.innerHTML;
-var originalpeaeal1ex = peaeal1ex.innerHTML;
-var originalpeaeal2ex = peaeal2ex.innerHTML;
-var originalpeaeal3ex = peaeal3ex.innerHTML;
-var originalpeaeal4ex = peaeal4ex.innerHTML;
-var originalpeaeal5ex = peaeal5ex.innerHTML;
-var originalpeaeal6ex = peaeal6ex.innerHTML;
-var originalpeaealdrftex = peaealdrftex.innerHTML;
-var toggleButton = document.getElementById('toggleButton');
-const copy = document.getElementById("copy");
-const comb = document.getElementById("combineButton");
-var myNav = document.getElementById("myNav");
-const savedpeaeal1 = localStorage.getItem("peaeal1");
-const savedpeaeal2 = localStorage.getItem("peaeal2");
-const savedpeaeal3 = localStorage.getItem("peaeal3");
-const savedpeaeal4 = localStorage.getItem("peaeal4");
-const savedpeaeal5 = localStorage.getItem("peaeal5");
-const savedpeaeal6 = localStorage.getItem("peaeal6");
-const savedpeaealdrft = localStorage.getItem("peaealdrft");
-const btn1 = document.getElementById("btn1");
-const btn2 = document.getElementById("btn2");
-const popup1 = document.getElementById("popup1");
-const popup2 = document.getElementById("popup2");
-const overlaypopup = document.getElementById("overlaypopup");
-const closeBtns = document.querySelectorAll(".close-btn");
-
-btn1.addEventListener("click", function() {
-  popup1.style.display = "block";
-  overlaypopup.style.display = "block";
-});
-
-btn2.addEventListener("click", function() {
-  popup2.style.display = "block";
-  overlaypopup.style.display = "block";
-});
-
-for (let i = 0; i < closeBtns.length; i++) {
-  closeBtns[i].addEventListener("click", function() {
-    popup1.style.display = "none";
-    popup2.style.display = "none";
-    overlaypopup.style.display = "none";
-  });
-}
-
-if (savedpeaeal1) {
-        peaeal1.textContent = savedpeaeal1;
-        peaeal1.removeAttribute("data-placeholder");
-      }
-
-      peaeal1.addEventListener("input", function() {
-        if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("peaeal1");
-        } else {
-          this.removeAttribute("data-placeholder");
-          localStorage.setItem("peaeal1", this.textContent);
-        }
-      });
-
-      if (savedpeaeal2) {
-        peaeal2.textContent = savedpeaeal2;
-        peaeal2.removeAttribute("data-placeholder");
-      }
-
-      peaeal2.addEventListener("input", function() {
-        if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("peaeal2");
-        } else {
-          this.removeAttribute("data-placeholder");
-          localStorage.setItem("peaeal2", this.textContent);
-        }
-      });
-
-      if (savedpeaeal3) {
-        peaeal3.textContent = savedpeaeal3;
-        peaeal3.removeAttribute("data-placeholder");
-      }
-
-      peaeal3.addEventListener("input", function() {
-        if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("peaeal3");
-        } else {
-          this.removeAttribute("data-placeholder");
-          localStorage.setItem("peaeal3", this.textContent);
-        }
-      });
-
-      if (savedpeaeal4) {
-        peaeal4.textContent = savedpeaeal4;
-        peaeal4.removeAttribute("data-placeholder");
-      }
-
-      peaeal4.addEventListener("input", function() {
-        if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("peaeal4");
-        } else {
-          this.removeAttribute("data-placeholder");
-          localStorage.setItem("peaeal4", this.textContent);
-        }
-      });
-
-      if (savedpeaeal5) {
-        peaeal5.textContent = savedpeaeal5;
-        peaeal5.removeAttribute("data-placeholder");
-      }
-
-      peaeal5.addEventListener("input", function() {
-        if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("peaeal5");
-        } else {
-          this.removeAttribute("data-placeholder");
-          localStorage.setItem("peaeal5", this.textContent);
-        }
-      });
-
-      if (savedpeaeal6) {
-        peaeal6.textContent = savedpeaeal6;
-        peaeal6.removeAttribute("data-placeholder");
-      }
-
-      peaeal6.addEventListener("input", function() {
-        if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("peaeal6");
-        } else {
-          this.removeAttribute("data-placeholder");
-          localStorage.setItem("peaeal6", this.textContent);
-        }
-      });
-
-      if (savedpeaealdrft) {
-        peaealdrft.textContent = savedpeaealdrft;
-        peaealdrft.removeAttribute("data-placeholder");
-      }
-
-      peaealdrft.addEventListener("input", function() {
-        if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("peaealdrft");
-        } else {
-          this.removeAttribute("data-placeholder");
-          localStorage.setItem("peaealdrft", this.textContent);
-        }
-      });
-  
-peaeal1.addEventListener("paste", function(e) {
-  e.preventDefault();
-  const text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
-  peaeal1.normalize();
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  const range = document.createRange();
-  range.selectNodeContents(peaeal1);
-  range.collapse(false);
-  selection.addRange(range);
-});
-
-peaeal2.addEventListener("paste", function(e) {
-  e.preventDefault();
-  const text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
-  peaeal2.normalize();
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  const range = document.createRange();
-  range.selectNodeContents(peaeal2);
-  range.collapse(false);
-  selection.addRange(range);
-});
-
-peaeal3.addEventListener("paste", function(e) {
-  e.preventDefault();
-  const text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
-  peaeal3.normalize();
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  const range = document.createRange();
-  range.selectNodeContents(peaeal3);
-  range.collapse(false);
-  selection.addRange(range);
-});
-
-peaeal4.addEventListener("paste", function(e) {
-  e.preventDefault();
-  const text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
-  peaeal4.normalize();
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  const range = document.createRange();
-  range.selectNodeContents(peaeal4);
-  range.collapse(false);
-  selection.addRange(range);
-});
-
-peaeal5.addEventListener("paste", function(e) {
-  e.preventDefault();
-  const text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
-  peaeal5.normalize();
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  const range = document.createRange();
-  range.selectNodeContents(peaeal5);
-  range.collapse(false);
-  selection.addRange(range);
-});
-
-peaeal6.addEventListener("paste", function(e) {
-  e.preventDefault();
-  const text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
-  peaeal6.normalize();
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  const range = document.createRange();
-  range.selectNodeContents(peaeal6);
-  range.collapse(false);
-  selection.addRange(range);
-});
-
-peaealdrft.addEventListener("paste", function(e) {
-  e.preventDefault();
-  const text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
-  peaealdrft.normalize();
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  const range = document.createRange();
-  range.selectNodeContents(peaealdrft);
-  range.collapse(false);
-  selection.addRange(range);
-});
-
-function openNav() {
-  document.getElementById("myNav").style.height = "100%";
-}
-
-function closeNav() {
-  document.getElementById("myNav").style.height = "0%";
-  document.getElementsByClassName("topnav").style = topnav.style;
-}
-
-window.addEventListener("load", function() {
-  var savedContent = localStorage.getItem("peaeal1");
-  if (savedContent) {
-    peaeal1.innerHTML = savedContent;
-  }
-  if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("peaeal1");
-        }
-});
-
-window.addEventListener("load", function() {
-  var savedContent = localStorage.getItem("peaeal2");
-  if (savedContent) {
-    peaeal2.innerHTML = savedContent;
-  }
-  if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("peaeal2");
-        }
-});
-
-window.addEventListener("load", function() {
-  var savedContent = localStorage.getItem("peaeal3");
-  if (savedContent) {
-    peaeal3.innerHTML = savedContent;
-  }
-  if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("peaeal3");
-        }
-});
-
-window.addEventListener("load", function() {
-  var savedContent = localStorage.getItem("peaeal4");
-  if (savedContent) {
-    peaeal4.innerHTML = savedContent;
-  }
-  if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("peaeal4");
-        }
-});
-
-window.addEventListener("load", function() {
-  var savedContent = localStorage.getItem("peaeal5");
-  if (savedContent) {
-    peaeal5.innerHTML = savedContent;
-  }
-  if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("peaeal5");
-        }
-});
-
-window.addEventListener("load", function() {
-  var savedContent = localStorage.getItem("peaeal6");
-  if (savedContent) {
-    peaeal6.innerHTML = savedContent;
-  }
-  if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("peaeal6");
-        }
-});
-
-window.addEventListener("load", function() {
-  var savedContent = localStorage.getItem("peaealdrft");
-  if (savedContent) {
-    peaealdrft.innerHTML = savedContent;
-  }
-  if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("peaealdrft");
-        }
-});
-
-resetButton.addEventListener("click", function() {
-  peaeal1.innerHTML = originalpeaeal1;
-  peaeal1ex.innerHTML = originalpeaeal1ex;
-  localStorage.removeItem("peaeal1");
-  peaeal1.setAttribute("data-placeholder", "Start typing...");
-  peaeal2.innerHTML = originalpeaeal2;
-  peaeal2ex.innerHTML = originalpeaeal2ex;
-  localStorage.removeItem("peaeal2");
-  peaeal2.setAttribute("data-placeholder", "Start typing...");
-  peaeal3.innerHTML = originalpeaeal3;
-  peaeal3ex.innerHTML = originalpeaeal3ex;
-  localStorage.removeItem("peaeal3");
-  peaeal3.setAttribute("data-placeholder", "Start typing...");
-  peaeal4.innerHTML = originalpeaeal4;
-  peaeal4ex.innerHTML = originalpeaeal4ex;
-  localStorage.removeItem("peaeal4");
-  peaeal4.setAttribute("data-placeholder", "Start typing...");
-  peaeal5.innerHTML = originalpeaeal5;
-  peaeal5ex.innerHTML = originalpeaeal5ex;
-  localStorage.removeItem("peaeal5");
-  peaeal5.setAttribute("data-placeholder", "Start typing...");
-  peaeal6.innerHTML = originalpeaeal6;
-  peaeal6ex.innerHTML = originalpeaeal6ex;
-  localStorage.removeItem("peaeal6");
-  peaeal6.setAttribute("data-placeholder", "Start typing...");
-  peaealdrft.innerHTML = originalpeaealdrft;
-  peaealdrftex.innerHTML = originalpeaealdrftex;
-  localStorage.removeItem("peaealdrft");
-  peaealdrft.setAttribute("data-placeholder", "Start typing...");
-});
+const elements = {
+    peaeal1: {
+      element: document.getElementById("peaeal1"),
+      placeholder: "Start typing...",
+      storageKey: "peaeal1",
+      originalContent: "",
+    },
+    peaeal2: {
+      element: document.getElementById("peaeal2"),
+      placeholder: "Start typing...",
+      storageKey: "peaeal2",
+      originalContent: "",
+    },
+    peaeal3: {
+      element: document.getElementById("peaeal3"),
+      placeholder: "Start typing...",
+      storageKey: "peaeal3",
+      originalContent: "",
+    },
+    peaeal4: {
+      element: document.getElementById("peaeal4"),
+      placeholder: "Start typing...",
+      storageKey: "peaeal4",
+      originalContent: "",
+    },
+    peaeal5: {
+      element: document.getElementById("peaeal5"),
+      placeholder: "Start typing...",
+      storageKey: "peaeal5",
+      originalContent: "",
+    },
+    peaeal6: {
+      element: document.getElementById("peaeal6"),
+      placeholder: "Start typing...",
+      storageKey: "peaeal6",
+      originalContent: "",
+    },
+    peaealdrft: {
+      element: document.getElementById("peaealdrft"),
+      placeholder: "Start typing...",
+      storageKey: "peaealdrft",
+      originalContent: "",
+    },
+  };
 
 toggleButton.addEventListener("click", function() {
   if (peaeal1.style.display === "none") {
@@ -528,24 +187,7 @@ function copyToClipboard() {
   navigator.clipboard.writeText(text);
     }
 }
-
-copy.addEventListener("click", function() {
-  copy.classList.remove("copyBtn");
-  copy.classList.add("green");
-  copy.innerHTML = "Copied <i class='fa-solid fa-check' style='color: #000000;'></i>";
-  setTimeout(function() {
-    copy.classList.remove("green");
-    copy.classList.add("copyBtn");
-    copy.innerHTML = "Copy <i class='fa-regular fa-copy' style='color: #000000;'></i>";
-  }, 2000);
-});
-
-comb.addEventListener("click", function() {
-  comb.innerHTML = "Combined <i class='fa-solid fa-check' style='color: #000000;'></i>";
-  setTimeout(function() {
-    comb.innerHTML = "Combine <i class='fa-solid fa-layer-group' style='color: #000000;'></i>";
-  }, 2000);
-});
 </script>
+<script src="temp.js"></script>
 </body>
 </html>

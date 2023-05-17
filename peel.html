@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PEEL writing template</title>
     <script src="https://kit.fontawesome.com/a98e96b6de.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="templatestyle2.css">
+    <link rel="stylesheet" href="templatestyle3.css">
     <link rel="shortcut icon" type="x-icon" href="writetemp.png">
 </head>
 <body>
@@ -15,17 +15,12 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="padding: 10px; z-index: 20;">&times;</a>
     <div class="overlay-content">
       <a href="/" style="font-size: 40px; font-weight: bold; width: 89%; left: 6%; display: inline-block; margin-bottom: 15px;">Home</a><br>
-      <a href="./aces.html">ACES</a>
-      <a href="./cope.html">COPE</a>
-      <a href="./deal.html">DEAL</a>
       <a href="./opvl.html">OPVL</a>
       <a href="./peaeal.html">PEAEAL</a>
       <a href="./peel.html"><b>PEEL</b></a>
       <a href="./races.html">RACES</a>
-      <a href="./rain.html">RAIN</a>
-      <a href="./tap.html">TAP</a>
       <a href="./teaeal.html">TEAEAL</a>
-      <a href="./teel.html">TEEL</a><a> </a><a> </a><a> </a>
+      <a href="./teel.html">TEEL</a><a> </a><a> </a>
       
     </div>
   </div>
@@ -54,7 +49,7 @@
   </div>
   
   <div id="overlaypopup"></div>
-  </div><br><br>
+  </div><br><br><div class="marginbox">
             <h2>Point</h2>
             <label class="switch">
               <h2 style="margin-left: -105px;">Example</h2>
@@ -93,288 +88,38 @@
             </div>
             
     <script>
-var resetButton = document.getElementById("resetButton");
-var combineButton = document.getElementById("combineButton");
-var peelp = document.getElementById("peelp");
-var peelpex = document.getElementById("peelpex");
-var peele = document.getElementById("peele");
-var peeleex = document.getElementById("peeleex");
-var peel2e = document.getElementById("peel2e");
-var peel2eex = document.getElementById("peel2eex");
-var peell = document.getElementById("peell");
-var peellex = document.getElementById("peellex");
-var peeldrft = document.getElementById("peeldrft");
-var peeldrftex = document.getElementById("peeldrftex");
-var originalpeelp = peelp.innerHTML;
-var originalpeele = peele.innerHTML;
-var originalpeel2e = peel2e.innerHTML;
-var originalpeell = peell.innerHTML;
-var originalpeeldrft = peeldrft.innerHTML;
-var originalpeelpex = peelpex.innerHTML;
-var originalpeeleex = peeleex.innerHTML;
-var originalpeel2eex = peel2eex.innerHTML;
-var originalpeellex = peellex.innerHTML;
-var originalpeeldrftex = peeldrftex.innerHTML;
-var toggleButton = document.getElementById('toggleButton');
-const copy = document.getElementById("copy");
-const comb = document.getElementById("combineButton");
-var myNav = document.getElementById("myNav");
-const savedpeelp = localStorage.getItem("peelp");
-const savedpeele = localStorage.getItem("peele");
-const savedpeel2e = localStorage.getItem("peel2e");
-const savedpeell = localStorage.getItem("peell");
-const savedpeeldrft = localStorage.getItem("peeldrft");
-const btn1 = document.getElementById("btn1");
-const btn2 = document.getElementById("btn2");
-const popup1 = document.getElementById("popup1");
-const popup2 = document.getElementById("popup2");
-const overlaypopup = document.getElementById("overlaypopup");
-const closeBtns = document.querySelectorAll(".close-btn");
-
-btn1.addEventListener("click", function() {
-  popup1.style.display = "block";
-  overlaypopup.style.display = "block";
-});
-
-btn2.addEventListener("click", function() {
-  popup2.style.display = "block";
-  overlaypopup.style.display = "block";
-});
-
-for (let i = 0; i < closeBtns.length; i++) {
-  closeBtns[i].addEventListener("click", function() {
-    popup1.style.display = "none";
-    popup2.style.display = "none";
-    overlaypopup.style.display = "none";
-  });
-}
-
-if (savedpeelp) {
-        peelp.textContent = savedpeelp;
-        peelp.removeAttribute("data-placeholder");
-      }
-
-      peelp.addEventListener("input", function() {
-        if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("peelp");
-        } else {
-          this.removeAttribute("data-placeholder");
-          localStorage.setItem("peelp", this.textContent);
-        }
-      });
-
-      if (savedpeele) {
-        peele.textContent = savedpeele;
-        peele.removeAttribute("data-placeholder");
-      }
-
-      peele.addEventListener("input", function() {
-        if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("peele");
-        } else {
-          this.removeAttribute("data-placeholder");
-          localStorage.setItem("peele", this.textContent);
-        }
-      });
-
-      if (savedpeel2e) {
-        peel2e.textContent = savedpeel2e;
-        peel2e.removeAttribute("data-placeholder");
-      }
-
-      peel2e.addEventListener("input", function() {
-        if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("peel2e");
-        } else {
-          this.removeAttribute("data-placeholder");
-          localStorage.setItem("peel2e", this.textContent);
-        }
-      });
-
-      if (savedpeell) {
-        peell.textContent = savedpeell;
-        peell.removeAttribute("data-placeholder");
-      }
-
-      peell.addEventListener("input", function() {
-        if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("peell");
-        } else {
-          this.removeAttribute("data-placeholder");
-          localStorage.setItem("peell", this.textContent);
-        }
-      });
-
-      if (savedpeeldrft) {
-        peeldrft.textContent = savedpeeldrft;
-        peeldrft.removeAttribute("data-placeholder");
-      }
-
-      peeldrft.addEventListener("input", function() {
-        if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("peeldrft");
-        } else {
-          this.removeAttribute("data-placeholder");
-          localStorage.setItem("peeldrft", this.textContent);
-        }
-      });
-  
-peelp.addEventListener("paste", function(e) {
-  e.preventDefault();
-  const text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
-  peelp.normalize();
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  const range = document.createRange();
-  range.selectNodeContents(peelp);
-  range.collapse(false);
-  selection.addRange(range);
-});
-
-peele.addEventListener("paste", function(e) {
-  e.preventDefault();
-  const text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
-  peele.normalize();
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  const range = document.createRange();
-  range.selectNodeContents(peele);
-  range.collapse(false);
-  selection.addRange(range);
-});
-
-peel2e.addEventListener("paste", function(e) {
-  e.preventDefault();
-  const text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
-  peel2e.normalize();
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  const range = document.createRange();
-  range.selectNodeContents(peel2e);
-  range.collapse(false);
-  selection.addRange(range);
-});
-
-peell.addEventListener("paste", function(e) {
-  e.preventDefault();
-  const text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
-  peell.normalize();
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  const range = document.createRange();
-  range.selectNodeContents(peell);
-  range.collapse(false);
-  selection.addRange(range);
-});
-
-peeldrft.addEventListener("paste", function(e) {
-  e.preventDefault();
-  const text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
-  peeldrft.normalize();
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  const range = document.createRange();
-  range.selectNodeContents(peeldrft);
-  range.collapse(false);
-  selection.addRange(range);
-});
-
-function openNav() {
-  document.getElementById("myNav").style.height = "100%";
-}
-
-function closeNav() {
-  document.getElementById("myNav").style.height = "0%";
-  document.getElementsByClassName("topnav").style = topnav.style;
-}
-
-peelp.addEventListener("input", function() {
-  localStorage.setItem("peelp", peelp.innerHTML);
-});
-
-window.addEventListener("load", function() {
-  var savedContent = localStorage.getItem("peelp");
-  if (savedContent) {
-    peelp.innerHTML = savedContent;
-  }
-});
-
-peele.addEventListener("input", function() {
-  localStorage.setItem("peele", peele.innerHTML);
-});
-
-window.addEventListener("load", function() {
-  var savedContent = localStorage.getItem("peele");
-  if (savedContent) {
-    peele.innerHTML = savedContent;
-  }
-});
-
-peel2e.addEventListener("input", function() {
-  localStorage.setItem("peel2e", peel2e.innerHTML);
-});
-
-window.addEventListener("load", function() {
-  var savedContent = localStorage.getItem("peel2e");
-  if (savedContent) {
-    peel2e.innerHTML = savedContent;
-  }
-});
-
-peell.addEventListener("input", function() {
-  localStorage.setItem("peell", peell.innerHTML);
-});
-
-window.addEventListener("load", function() {
-  var savedContent = localStorage.getItem("peell");
-  if (savedContent) {
-    peell.innerHTML = savedContent;
-  }
-});
-
-peeldrft.addEventListener("input", function() {
-  localStorage.setItem("peeldrft", peeldrft.innerHTML);
-});
-
-window.addEventListener("load", function() {
-  var savedContent = localStorage.getItem("peeldrft");
-  if (savedContent) {
-    peeldrft.innerHTML = savedContent;
-  }
-});
-
-resetButton.addEventListener("click", function() {
-  peelp.innerHTML = originalpeelp;
-  peelpex.innerHTML = originalpeelpex;
-  localStorage.removeItem("peelp");
-  peelp.setAttribute("data-placeholder", "Start typing...");
-  peele.innerHTML = originalpeele;
-  peeleex.innerHTML = originalpeeleex;
-  localStorage.removeItem("peele");
-  peele.setAttribute("data-placeholder", "Start typing...");
-  peel2e.innerHTML = originalpeel2e;
-  peel2eex.innerHTML = originalpeel2eex;
-  localStorage.removeItem("peel2e");
-  peel2e.setAttribute("data-placeholder", "Start typing...");
-  peell.innerHTML = originalpeell;
-  peellex.innerHTML = originalpeellex;
-  localStorage.removeItem("peell");
-  peell.setAttribute("data-placeholder", "Start typing...");
-  peeldrft.innerHTML = originalpeeldrft;
-  peeldrftex.innerHTML = originalpeeldrftex;
-  localStorage.removeItem("peeldrft");
-  peeldrft.setAttribute("data-placeholder", "Start typing...");
-});
+const elements = {
+    peelp: {
+      element: document.getElementById("peelp"),
+      placeholder: "Start typing...",
+      storageKey: "peelp",
+      originalContent: "",
+    },
+    peele: {
+      element: document.getElementById("peele"),
+      placeholder: "Start typing...",
+      storageKey: "peele",
+      originalContent: "",
+    },
+    peel2e: {
+      element: document.getElementById("peel2e"),
+      placeholder: "Start typing...",
+      storageKey: "peel2e",
+      originalContent: "",
+    },
+    peell: {
+      element: document.getElementById("peell"),
+      placeholder: "Start typing...",
+      storageKey: "peell",
+      originalContent: "",
+    },
+    peeldrft: {
+      element: document.getElementById("peeldrft"),
+      placeholder: "Start typing...",
+      storageKey: "peeldrft",
+      originalContent: "",
+    },
+  };
 
 toggleButton.addEventListener("click", function() {
   if (peelp.style.display === "none") {
@@ -418,24 +163,7 @@ function copyToClipboard() {
   navigator.clipboard.writeText(text);
     }
 }
-
-copy.addEventListener("click", function() {
-  copy.classList.remove("copyBtn");
-  copy.classList.add("green");
-  copy.innerHTML = "Copied <i class='fa-solid fa-check' style='color: #000000;'></i>";
-  setTimeout(function() {
-    copy.classList.remove("green");
-    copy.classList.add("copyBtn");
-    copy.innerHTML = "Copy <i class='fa-regular fa-copy' style='color: #000000;'></i>";
-  }, 2000);
-});
-
-comb.addEventListener("click", function() {
-  comb.innerHTML = "Combined <i class='fa-solid fa-check' style='color: #000000;'></i>";
-  setTimeout(function() {
-    comb.innerHTML = "Combine <i class='fa-solid fa-layer-group' style='color: #000000;'></i>";
-  }, 2000);
-});
 </script>
+<script src="temp.js"></script>
 </body>
 </html>

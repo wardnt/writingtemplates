@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RACES writing template</title>
     <script src="https://kit.fontawesome.com/a98e96b6de.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="templatestyle2.css">
+    <link rel="stylesheet" href="templatestyle3.css">
     <link rel="shortcut icon" type="x-icon" href="writetemp.png">
 </head>
 <body>
@@ -15,17 +15,12 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="padding: 10px; z-index: 20;">&times;</a>
     <div class="overlay-content">
       <a href="/" style="font-size: 40px; font-weight: bold; width: 89%; left: 6%; display: inline-block; margin-bottom: 15px;">Home</a><br>
-      <a href="./aces.html">ACES</a>
-      <a href="./cope.html">COPE</a>
-      <a href="./deal.html">DEAL</a>
       <a href="./opvl.html">OPVL</a>
       <a href="./peaeal.html">PEAEAL</a>
       <a href="./peel.html">PEEL</a>
       <a href="./races.html"><b>RACES</b></a>
-      <a href="./rain.html">RAIN</a>
-      <a href="./tap.html">TAP</a>
       <a href="./teaeal.html">TEAEAL</a>
-      <a href="./teel.html">TEEL</a><a> </a><a> </a><a> </a>
+      <a href="./teel.html">TEEL</a><a> </a><a> </a>
       
     </div>
   </div>
@@ -54,7 +49,7 @@
   </div>
   
   <div id="overlaypopup"></div>
-  </div><br><br>
+  </div><br><br><div class="marginbox">
             <h2>Restate</h2>
             <label class="switch">
                 <h2 style="margin-left: -105px;">Example</h2>
@@ -96,336 +91,44 @@
             </div>
             
     <script>
-var resetButton = document.getElementById("resetButton");
-var combineButton = document.getElementById("combineButton");
-var racesr = document.getElementById("racesr");
-var racesrex = document.getElementById("racesrex");
-var racesa = document.getElementById("racesa");
-var racesaex = document.getElementById("racesaex");
-var racesc = document.getElementById("racesc");
-var racescex = document.getElementById("racescex");
-var racese = document.getElementById("racese");
-var raceseex = document.getElementById("raceseex");
-var racess = document.getElementById("racess");
-var racessex = document.getElementById("racessex");
-var racesdrft = document.getElementById("racesdrft");
-var racesdrftex = document.getElementById("racesdrftex");
-var originalracesr = racesr.innerHTML;
-var originalracesa = racesa.innerHTML;
-var originalracesc = racesc.innerHTML;
-var originalracese = racese.innerHTML;
-var originalracess = racess.innerHTML;
-var originalracesdrft = racesdrft.innerHTML;
-var originalracesrex = racesrex.innerHTML;
-var originalracesaex = racesaex.innerHTML;
-var originalracescex = racescex.innerHTML;
-var originalraceseex = raceseex.innerHTML;
-var originalracessex = racessex.innerHTML;
-var originalracesdrftex = racesdrftex.innerHTML;
-var toggleButton = document.getElementById('toggleButton');
-const copy = document.getElementById("copy");
-const comb = document.getElementById("combineButton");
-var myNav = document.getElementById("myNav");
-const savedracesr = localStorage.getItem("racesr");
-const savedracesa = localStorage.getItem("racesa");
-const savedracesc = localStorage.getItem("racesc");
-const savedracese = localStorage.getItem("racese");
-const savedracess = localStorage.getItem("racess");
-const savedracesdrft = localStorage.getItem("racesdrft");
-const btn1 = document.getElementById("btn1");
-const btn2 = document.getElementById("btn2");
-const popup1 = document.getElementById("popup1");
-const popup2 = document.getElementById("popup2");
-const overlaypopup = document.getElementById("overlaypopup");
-const closeBtns = document.querySelectorAll(".close-btn");
-
-btn1.addEventListener("click", function() {
-  popup1.style.display = "block";
-  overlaypopup.style.display = "block";
-});
-
-btn2.addEventListener("click", function() {
-  popup2.style.display = "block";
-  overlaypopup.style.display = "block";
-});
-
-for (let i = 0; i < closeBtns.length; i++) {
-  closeBtns[i].addEventListener("click", function() {
-    popup1.style.display = "none";
-    popup2.style.display = "none";
-    overlaypopup.style.display = "none";
-  });
-}
-
-if (savedracesr) {
-        racesr.textContent = savedracesr;
-        racesr.removeAttribute("data-placeholder");
-      }
-
-      racesr.addEventListener("input", function() {
-        if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("racesr");
-        } else {
-          this.removeAttribute("data-placeholder");
-          localStorage.setItem("racesr", this.textContent);
-        }
-      });
-
-      if (savedracesa) {
-        racesa.textContent = savedracesa;
-        racesa.removeAttribute("data-placeholder");
-      }
-
-      racesa.addEventListener("input", function() {
-        if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("racesa");
-        } else {
-          this.removeAttribute("data-placeholder");
-          localStorage.setItem("racesa", this.textContent);
-        }
-      });
-
-      if (savedracesc) {
-        racesc.textContent = savedracesc;
-        racesc.removeAttribute("data-placeholder");
-      }
-
-      racesc.addEventListener("input", function() {
-        if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("racesc");
-        } else {
-          this.removeAttribute("data-placeholder");
-          localStorage.setItem("racesc", this.textContent);
-        }
-      });
-
-      if (savedracese) {
-        racese.textContent = savedracese;
-        racese.removeAttribute("data-placeholder");
-      }
-
-      racese.addEventListener("input", function() {
-        if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("racese");
-        } else {
-          this.removeAttribute("data-placeholder");
-          localStorage.setItem("racese", this.textContent);
-        }
-      });
-
-      if (savedracess) {
-        racess.textContent = savedracess;
-        racess.removeAttribute("data-placeholder");
-      }
-
-      racess.addEventListener("input", function() {
-        if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("racess");
-        } else {
-          this.removeAttribute("data-placeholder");
-          localStorage.setItem("racess", this.textContent);
-        }
-      });
-
-      if (savedracesdrft) {
-        racesdrft.textContent = savedracesdrft;
-        racesdrft.removeAttribute("data-placeholder");
-      }
-
-      racesdrft.addEventListener("input", function() {
-        if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("racesdrft");
-        } else {
-          this.removeAttribute("data-placeholder");
-          localStorage.setItem("racesdrft", this.textContent);
-        }
-      });
-  
-racesr.addEventListener("paste", function(e) {
-  e.preventDefault();
-  const text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
-  racesr.normalize();
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  const range = document.createRange();
-  range.selectNodeContents(racesr);
-  range.collapse(false);
-  selection.addRange(range);
-});
-
-racesa.addEventListener("paste", function(e) {
-  e.preventDefault();
-  const text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
-  racesa.normalize();
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  const range = document.createRange();
-  range.selectNodeContents(racesa);
-  range.collapse(false);
-  selection.addRange(range);
-});
-
-racesc.addEventListener("paste", function(e) {
-  e.preventDefault();
-  const text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
-  racesc.normalize();
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  const range = document.createRange();
-  range.selectNodeContents(racesc);
-  range.collapse(false);
-  selection.addRange(range);
-});
-
-racese.addEventListener("paste", function(e) {
-  e.preventDefault();
-  const text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
-  racese.normalize();
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  const range = document.createRange();
-  range.selectNodeContents(racese);
-  range.collapse(false);
-  selection.addRange(range);
-});
-
-racess.addEventListener("paste", function(e) {
-  e.preventDefault();
-  const text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
-  racess.normalize();
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  const range = document.createRange();
-  range.selectNodeContents(racess);
-  range.collapse(false);
-  selection.addRange(range);
-});
-
-racesdrft.addEventListener("paste", function(e) {
-  e.preventDefault();
-  const text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
-  racesdrft.normalize();
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  const range = document.createRange();
-  range.selectNodeContents(racesdrft);
-  range.collapse(false);
-  selection.addRange(range);
-});
-
-function openNav() {
-  document.getElementById("myNav").style.height = "100%";
-}
-
-function closeNav() {
-  document.getElementById("myNav").style.height = "0%";
-  document.getElementsByClassName("topnav").style = topnav.style;
-}
-
-racesr.addEventListener("input", function() {
-  localStorage.setItem("racesr", racesr.innerHTML);
-});
-
-window.addEventListener("load", function() {
-  var savedContent = localStorage.getItem("racesr");
-  if (savedContent) {
-    racesr.innerHTML = savedContent;
-  }
-});
-
-racesa.addEventListener("input", function() {
-  localStorage.setItem("racesa", racesa.innerHTML);
-});
-
-window.addEventListener("load", function() {
-  var savedContent = localStorage.getItem("racesa");
-  if (savedContent) {
-    racesa.innerHTML = savedContent;
-  }
-});
-
-racesc.addEventListener("input", function() {
-  localStorage.setItem("racesc", racesc.innerHTML);
-});
-
-window.addEventListener("load", function() {
-  var savedContent = localStorage.getItem("racesc");
-  if (savedContent) {
-    racesc.innerHTML = savedContent;
-  }
-});
-
-racese.addEventListener("input", function() {
-  localStorage.setItem("racese", racese.innerHTML);
-});
-
-window.addEventListener("load", function() {
-  var savedContent = localStorage.getItem("racese");
-  if (savedContent) {
-    racese.innerHTML = savedContent;
-  }
-});
-
-racess.addEventListener("input", function() {
-  localStorage.setItem("racess", racess.innerHTML);
-});
-
-window.addEventListener("load", function() {
-  var savedContent = localStorage.getItem("racess");
-  if (savedContent) {
-    racess.innerHTML = savedContent;
-  }
-});
-
-racesdrft.addEventListener("input", function() {
-  localStorage.setItem("racesdrft", racesdrft.innerHTML);
-});
-
-window.addEventListener("load", function() {
-  var savedContent = localStorage.getItem("racesdrft");
-  if (savedContent) {
-    racesdrft.innerHTML = savedContent;
-  }
-});
-
-resetButton.addEventListener("click", function() {
-  racesr.innerHTML = originalracesr;
-  racesrex.innerHTML = originalracesrex;
-  localStorage.removeItem("racesr");
-  racesr.setAttribute("data-placeholder", "Start typing...");
-  racesa.innerHTML = originalracesa;
-  racesaex.innerHTML = originalracesaex;
-  localStorage.removeItem("racesa");
-  racesa.setAttribute("data-placeholder", "Start typing...");
-  racesc.innerHTML = originalracesc;
-  racescex.innerHTML = originalracescex;
-  localStorage.removeItem("racesc");
-  racesc.setAttribute("data-placeholder", "Start typing...");
-  racese.innerHTML = originalracese;
-  raceseex.innerHTML = originalraceseex;
-  localStorage.removeItem("racese");
-  racese.setAttribute("data-placeholder", "Start typing...");
-  racess.innerHTML = originalracess;
-  racessex.innerHTML = originalracessex;
-  localStorage.removeItem("racess");
-  racess.setAttribute("data-placeholder", "Start typing...");
-  racesdrft.innerHTML = originalracesdrft;
-  racesdrftex.innerHTML = originalracesdrftex;
-  localStorage.removeItem("racesdrft");
-  racesdrft.setAttribute("data-placeholder", "Start typing...");
-});
+const elements = {
+    racesr: {
+      element: document.getElementById("racesr"),
+      placeholder: "Start typing...",
+      storageKey: "racesr",
+      originalContent: "",
+    },
+    racesa: {
+      element: document.getElementById("racesa"),
+      placeholder: "Start typing...",
+      storageKey: "racesa",
+      originalContent: "",
+    },
+    racesc: {
+      element: document.getElementById("racesc"),
+      placeholder: "Start typing...",
+      storageKey: "racesc",
+      originalContent: "",
+    },
+    racese: {
+      element: document.getElementById("racese"),
+      placeholder: "Start typing...",
+      storageKey: "racese",
+      originalContent: "",
+    },
+    racess: {
+      element: document.getElementById("racess"),
+      placeholder: "Start typing...",
+      storageKey: "racess",
+      originalContent: "",
+    },
+    racesdrft: {
+      element: document.getElementById("racesdrft"),
+      placeholder: "Start typing...",
+      storageKey: "racesdrft",
+      originalContent: "",
+    },
+  };
 
 toggleButton.addEventListener("click", function() {
   if (racesr.style.display === "none") {
@@ -472,24 +175,7 @@ function copyToClipboard() {
   navigator.clipboard.writeText(text);
     }
 }
-
-copy.addEventListener("click", function() {
-  copy.classList.remove("copyBtn");
-  copy.classList.add("green");
-  copy.innerHTML = "Copied <i class='fa-solid fa-check' style='color: #000000;'></i>";
-  setTimeout(function() {
-    copy.classList.remove("green");
-    copy.classList.add("copyBtn");
-    copy.innerHTML = "Copy <i class='fa-regular fa-copy' style='color: #000000;'></i>";
-  }, 2000);
-});
-
-comb.addEventListener("click", function() {
-  comb.innerHTML = "Combined <i class='fa-solid fa-check' style='color: #000000;'></i>";
-  setTimeout(function() {
-    comb.innerHTML = "Combine <i class='fa-solid fa-layer-group' style='color: #000000;'></i>";
-  }, 2000);
-});
 </script>
+<script src="temp.js"></script>
 </body>
 </html>

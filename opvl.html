@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OPVL writing template</title>
     <script src="https://kit.fontawesome.com/a98e96b6de.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="templatestyle2.css">
+    <link rel="stylesheet" href="templatestyle3.css">
     <link rel="shortcut icon" type="x-icon" href="writetemp.png">
 </head>
 <body>
@@ -15,18 +15,13 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="padding: 10px; z-index: 20;">&times;</a>
     <div class="overlay-content">
       <a href="./" style="font-size: 40px; font-weight: bold; width: 89%; left: 6%; display: inline-block; margin-bottom: 15px;">Home</a><br>
-      <a href="./aces.html">ACES</a>
-      <a href="./cope.html">COPE</a>
-      <a href="./deal.html">DEAL</a>
       <a href="./opvl.html"><b>OPVL</b></a>
       <a href="./peaeal.html">PEAEAL</a>
       <a href="./peel.html">PEEL</a>
       <a href="./races.html">RACES</a>
-      <a href="./rain.html">RAIN</a>
-      <a href="./tap.html">TAP</a>
       <a href="./teaeal.html">TEAEAL</a>
       <a href="./teel.html">TEEL</a>
-      <a> </a><a> </a><a> </a>
+      <a> </a><a> </a>
     </div>
   </div>
   <div class="topBan">
@@ -53,7 +48,7 @@
   </div>
   
   <div id="overlaypopup"></div>
-  </div><br><br>
+  </div><br><br><div class="marginbox">
             <h2>Origin</h2>
             <label class="switch">
                 <h2 style="margin-left: -105px;">Example</h2>
@@ -94,288 +89,38 @@
             </div>
             
     <script>
-var resetButton = document.getElementById("resetButton");
-var combineButton = document.getElementById("combineButton");
-var opvlo = document.getElementById("opvlo");
-var opvloex = document.getElementById("opvloex");
-var opvlp = document.getElementById("opvlp");
-var opvlpex = document.getElementById("opvlpex");
-var opvlv = document.getElementById("opvlv");
-var opvlvex = document.getElementById("opvlvex");
-var opvll = document.getElementById("opvll");
-var opvllex = document.getElementById("opvllex");
-var opvldrft = document.getElementById("opvldrft");
-var opvldrftex = document.getElementById("opvldrftex");
-var originalopvlo = opvlo.innerHTML;
-var originalopvlp = opvlp.innerHTML;
-var originalopvlv = opvlv.innerHTML;
-var originalopvll = opvll.innerHTML;
-var originalopvldrft = opvldrft.innerHTML;
-var originalopvloex = opvloex.innerHTML;
-var originalopvlpex = opvlpex.innerHTML;
-var originalopvlvex = opvlvex.innerHTML;
-var originalopvllex = opvllex.innerHTML;
-var originalopvldrftex = opvldrftex.innerHTML;
-var toggleButton = document.getElementById('toggleButton');
-const copy = document.getElementById("copy");
-const comb = document.getElementById("combineButton");
-var myNav = document.getElementById("myNav");
-const savedopvlo = localStorage.getItem("opvlo");
-const savedopvlp = localStorage.getItem("opvlp");
-const savedopvlv = localStorage.getItem("opvlv");
-const savedopvll = localStorage.getItem("opvll");
-const savedopvldrft = localStorage.getItem("opvldrft");
-const btn1 = document.getElementById("btn1");
-const btn2 = document.getElementById("btn2");
-const popup1 = document.getElementById("popup1");
-const popup2 = document.getElementById("popup2");
-const overlaypopup = document.getElementById("overlaypopup");
-const closeBtns = document.querySelectorAll(".close-btn");
-
-btn1.addEventListener("click", function() {
-  popup1.style.display = "block";
-  overlaypopup.style.display = "block";
-});
-
-btn2.addEventListener("click", function() {
-  popup2.style.display = "block";
-  overlaypopup.style.display = "block";
-});
-
-for (let i = 0; i < closeBtns.length; i++) {
-  closeBtns[i].addEventListener("click", function() {
-    popup1.style.display = "none";
-    popup2.style.display = "none";
-    overlaypopup.style.display = "none";
-  });
-}
-
-if (savedopvlo) {
-        opvlo.textContent = savedopvlo;
-        opvlo.removeAttribute("data-placeholder");
-      }
-
-      opvlo.addEventListener("input", function() {
-        if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("opvlo");
-        } else {
-          this.removeAttribute("data-placeholder");
-          localStorage.setItem("opvlo", this.textContent);
-        }
-      });
-
-      if (savedopvlp) {
-        opvlp.textContent = savedopvlp;
-        opvlp.removeAttribute("data-placeholder");
-      }
-
-      opvlp.addEventListener("input", function() {
-        if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("opvlp");
-        } else {
-          this.removeAttribute("data-placeholder");
-          localStorage.setItem("opvlp", this.textContent);
-        }
-      });
-
-      if (savedopvlv) {
-        opvlv.textContent = savedopvlv;
-        opvlv.removeAttribute("data-placeholder");
-      }
-
-      opvlv.addEventListener("input", function() {
-        if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("opvlv");
-        } else {
-          this.removeAttribute("data-placeholder");
-          localStorage.setItem("opvlv", this.textContent);
-        }
-      });
-
-      if (savedopvll) {
-        opvll.textContent = savedopvll;
-        opvll.removeAttribute("data-placeholder");
-      }
-
-      opvll.addEventListener("input", function() {
-        if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("opvll");
-        } else {
-          this.removeAttribute("data-placeholder");
-          localStorage.setItem("opvll", this.textContent);
-        }
-      });
-
-      if (savedopvldrft) {
-        opvldrft.textContent = savedopvldrft;
-        opvldrft.removeAttribute("data-placeholder");
-      }
-
-      opvldrft.addEventListener("input", function() {
-        if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("opvldrft");
-        } else {
-          this.removeAttribute("data-placeholder");
-          localStorage.setItem("opvldrft", this.textContent);
-        }
-      });
-  
-opvlo.addEventListener("paste", function(e) {
-  e.preventDefault();
-  const text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
-  opvlo.normalize();
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  const range = document.createRange();
-  range.selectNodeContents(opvlo);
-  range.collapse(false);
-  selection.addRange(range);
-});
-
-opvlp.addEventListener("paste", function(e) {
-  e.preventDefault();
-  const text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
-  opvlp.normalize();
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  const range = document.createRange();
-  range.selectNodeContents(opvlp);
-  range.collapse(false);
-  selection.addRange(range);
-});
-
-opvlv.addEventListener("paste", function(e) {
-  e.preventDefault();
-  const text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
-  opvlv.normalize();
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  const range = document.createRange();
-  range.selectNodeContents(opvlv);
-  range.collapse(false);
-  selection.addRange(range);
-});
-
-opvll.addEventListener("paste", function(e) {
-  e.preventDefault();
-  const text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
-  opvll.normalize();
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  const range = document.createRange();
-  range.selectNodeContents(opvll);
-  range.collapse(false);
-  selection.addRange(range);
-});
-
-opvldrft.addEventListener("paste", function(e) {
-  e.preventDefault();
-  const text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
-  opvldrft.normalize();
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  const range = document.createRange();
-  range.selectNodeContents(opvldrft);
-  range.collapse(false);
-  selection.addRange(range);
-});
-
-function openNav() {
-  document.getElementById("myNav").style.height = "100%";
-}
-
-function closeNav() {
-  document.getElementById("myNav").style.height = "0%";
-  document.getElementsByClassName("topnav").style = topnav.style;
-}
-
-window.addEventListener("load", function() {
-  var savedContent = localStorage.getItem("opvlo");
-  if (savedContent) {
-    opvlo.innerHTML = savedContent;
-  }
-  if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("opvlo");
-    }
-});
-
-window.addEventListener("load", function() {
-  var savedContent = localStorage.getItem("opvlp");
-  if (savedContent) {
-    opvlp.innerHTML = savedContent;
-  }
-  if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("opvlp");
-    }
-});
-
-window.addEventListener("load", function() {
-  var savedContent = localStorage.getItem("opvlv");
-  if (savedContent) {
-    opvlv.innerHTML = savedContent;
-  }
-  if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("opvlv");
-    }
-});
-
-window.addEventListener("load", function() {
-  var savedContent = localStorage.getItem("opvll");
-  if (savedContent) {
-    opvll.innerHTML = savedContent;
-  }
-  if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("opvll");
-    }
-});
-
-window.addEventListener("load", function() {
-  var savedContent = localStorage.getItem("opvldrft");
-  if (savedContent) {
-    opvldrft.innerHTML = savedContent;
-  }
-  if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("opvldrft");
-    }
-});
-
-resetButton.addEventListener("click", function() {
-  opvlo.innerHTML = originalopvlo;
-  opvloex.innerHTML = originalopvloex;
-  localStorage.removeItem("opvlo");
-  opvlo.setAttribute("data-placeholder", "Start typing...");
-  opvlp.innerHTML = originalopvlp;
-  opvlpex.innerHTML = originalopvlpex;
-  localStorage.removeItem("opvlp");
-  opvlp.setAttribute("data-placeholder", "Start typing...");
-  opvlv.innerHTML = originalopvlv;
-  opvlvex.innerHTML = originalopvlvex;
-  localStorage.removeItem("opvlv");
-  opvlv.setAttribute("data-placeholder", "Start typing...");
-  opvll.innerHTML = originalopvll;
-  opvllex.innerHTML = originalopvllex;
-  localStorage.removeItem("opvll");
-  opvll.setAttribute("data-placeholder", "Start typing...");
-  opvldrft.innerHTML = originalopvldrft;
-  opvldrftex.innerHTML = originalopvldrftex;
-  localStorage.removeItem("opvldrft");
-  opvldrft.setAttribute("data-placeholder", "Start typing...");
-});
+const elements = {
+    opvlo: {
+      element: document.getElementById("opvlo"),
+      placeholder: "Start typing...",
+      storageKey: "opvlo",
+      originalContent: "",
+    },
+    opvlp: {
+      element: document.getElementById("opvlp"),
+      placeholder: "Start typing...",
+      storageKey: "opvlp",
+      originalContent: "",
+    },
+    opvlv: {
+      element: document.getElementById("opvlv"),
+      placeholder: "Start typing...",
+      storageKey: "opvlv",
+      originalContent: "",
+    },
+    opvll: {
+      element: document.getElementById("opvll"),
+      placeholder: "Start typing...",
+      storageKey: "opvll",
+      originalContent: "",
+    },
+    opvldrft: {
+      element: document.getElementById("opvldrft"),
+      placeholder: "Start typing...",
+      storageKey: "opvldrft",
+      originalContent: "",
+    },
+  };
 
 toggleButton.addEventListener("click", function() {
   if (opvlo.style.display === "none") {
@@ -424,24 +169,7 @@ function copyToClipboard() {
   navigator.clipboard.writeText(text);
     }
 }
-
-copy.addEventListener("click", function() {
-  copy.classList.remove("copyBtn");
-  copy.classList.add("green");
-  copy.innerHTML = "Copied <i class='fa-solid fa-check' style='color: #000000;'></i>";
-  setTimeout(function() {
-    copy.classList.remove("green");
-    copy.classList.add("copyBtn");
-    copy.innerHTML = "Copy <i class='fa-regular fa-copy' style='color: #000000;'></i>";
-  }, 2000);
-});
-
-comb.addEventListener("click", function() {
-  comb.innerHTML = "Combined <i class='fa-solid fa-check' style='color: #000000;'></i>";
-  setTimeout(function() {
-    comb.innerHTML = "Combine <i class='fa-solid fa-layer-group' style='color: #000000;'></i>";
-  }, 2000);
-});
 </script>
+<script src="temp.js"></script>
 </body>
 </html>

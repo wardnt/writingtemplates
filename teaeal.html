@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TEAEAL writing template</title>
     <script src="https://kit.fontawesome.com/a98e96b6de.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="templatestyle2.css">
+    <link rel="stylesheet" href="templatestyle3.css">
     <link rel="shortcut icon" type="x-icon" href="writetemp.png">
 </head>
 <body>
@@ -15,18 +15,13 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="padding: 10px; z-index: 20;">&times;</a>
     <div class="overlay-content">
       <a href="./" style="font-size: 40px; font-weight: bold; width: 89%; left: 6%; display: inline-block; margin-bottom: 15px;">Home</a><br>
-      <a href="./aces.html">ACES</a>
-      <a href="./cope.html">COPE</a>
-      <a href="./deal.html">DEAL</a>
       <a href="./opvl.html">OPVL</a>
       <a href="./peaeal.html">PEAEAL</a>
       <a href="./peel.html">PEEL</a>
       <a href="./races.html">RACES</a>
-      <a href="./rain.html">RAIN</a>
-      <a href="./tap.html">TAP</a>
       <a href="./teaeal.html"><b>TEAEAL</b></a>
       <a href="./teel.html">TEEL</a>
-      <a> </a><a> </a><a> </a>
+      <a> </a><a> </a>
     </div>
   </div>
   <div class="topBan">
@@ -54,7 +49,7 @@
   </div>
   
   <div id="overlaypopup"></div>
-  </div><br><br>
+  </div><br><br><div class="marginbox">
             <h2>Topic</h2>
             <label class="switch">
                 <h2 style="margin-left: -105px;">Example</h2>
@@ -100,384 +95,50 @@
             </div>
             
     <script>
-var resetButton = document.getElementById("resetButton");
-var combineButton = document.getElementById("combineButton");
-var teaeal1 = document.getElementById("teaeal1");
-var teaeal1ex = document.getElementById("teaeal1ex");
-var teaeal2 = document.getElementById("teaeal2");
-var teaeal2ex = document.getElementById("teaeal2ex");
-var teaeal3 = document.getElementById("teaeal3");
-var teaeal3ex = document.getElementById("teaeal3ex");
-var teaeal4 = document.getElementById("teaeal4");
-var teaeal4ex = document.getElementById("teaeal4ex");
-var teaeal5 = document.getElementById("teaeal5");
-var teaeal5ex = document.getElementById("teaeal5ex");
-var teaeal6 = document.getElementById("teaeal6");
-var teaeal6ex = document.getElementById("teaeal6ex");
-var teaealdrft = document.getElementById("teaealdrft");
-var teaealdrftex = document.getElementById("teaealdrftex");
-var originalteaeal1 = teaeal1.innerHTML;
-var originalteaeal2 = teaeal2.innerHTML;
-var originalteaeal3 = teaeal3.innerHTML;
-var originalteaeal4 = teaeal4.innerHTML;
-var originalteaeal5 = teaeal5.innerHTML;
-var originalteaeal6 = teaeal6.innerHTML;
-var originalteaealdrft = teaealdrft.innerHTML;
-var originalteaeal1ex = teaeal1ex.innerHTML;
-var originalteaeal2ex = teaeal2ex.innerHTML;
-var originalteaeal3ex = teaeal3ex.innerHTML;
-var originalteaeal4ex = teaeal4ex.innerHTML;
-var originalteaeal5ex = teaeal5ex.innerHTML;
-var originalteaeal6ex = teaeal6ex.innerHTML;
-var originalteaealdrftex = teaealdrftex.innerHTML;
-var toggleButton = document.getElementById('toggleButton');
-const copy = document.getElementById("copy");
-const comb = document.getElementById("combineButton");
-var myNav = document.getElementById("myNav");
-const savedteaeal1 = localStorage.getItem("teaeal1");
-const savedteaeal2 = localStorage.getItem("teaeal2");
-const savedteaeal3 = localStorage.getItem("teaeal3");
-const savedteaeal4 = localStorage.getItem("teaeal4");
-const savedteaeal5 = localStorage.getItem("teaeal5");
-const savedteaeal6 = localStorage.getItem("teaeal6");
-const savedteaealdrft = localStorage.getItem("teaealdrft");
-const btn1 = document.getElementById("btn1");
-const btn2 = document.getElementById("btn2");
-const popup1 = document.getElementById("popup1");
-const popup2 = document.getElementById("popup2");
-const overlaypopup = document.getElementById("overlaypopup");
-const closeBtns = document.querySelectorAll(".close-btn");
-
-btn1.addEventListener("click", function() {
-  popup1.style.display = "block";
-  overlaypopup.style.display = "block";
-});
-
-btn2.addEventListener("click", function() {
-  popup2.style.display = "block";
-  overlaypopup.style.display = "block";
-});
-
-for (let i = 0; i < closeBtns.length; i++) {
-  closeBtns[i].addEventListener("click", function() {
-    popup1.style.display = "none";
-    popup2.style.display = "none";
-    overlaypopup.style.display = "none";
-  });
-}
-
-if (savedteaeal1) {
-        teaeal1.textContent = savedteaeal1;
-        teaeal1.removeAttribute("data-placeholder");
-      }
-
-      teaeal1.addEventListener("input", function() {
-        if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("teaeal1");
-        } else {
-          this.removeAttribute("data-placeholder");
-          localStorage.setItem("teaeal1", this.textContent);
-        }
-      });
-
-      if (savedteaeal2) {
-        teaeal2.textContent = savedteaeal2;
-        teaeal2.removeAttribute("data-placeholder");
-      }
-
-      teaeal2.addEventListener("input", function() {
-        if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("teaeal2");
-        } else {
-          this.removeAttribute("data-placeholder");
-          localStorage.setItem("teaeal2", this.textContent);
-        }
-      });
-
-      if (savedteaeal3) {
-        teaeal3.textContent = savedteaeal3;
-        teaeal3.removeAttribute("data-placeholder");
-      }
-
-      teaeal3.addEventListener("input", function() {
-        if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("teaeal3");
-        } else {
-          this.removeAttribute("data-placeholder");
-          localStorage.setItem("teaeal3", this.textContent);
-        }
-      });
-
-      if (savedteaeal4) {
-        teaeal4.textContent = savedteaeal4;
-        teaeal4.removeAttribute("data-placeholder");
-      }
-
-      teaeal4.addEventListener("input", function() {
-        if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("teaeal4");
-        } else {
-          this.removeAttribute("data-placeholder");
-          localStorage.setItem("teaeal4", this.textContent);
-        }
-      });
-
-      if (savedteaeal5) {
-        teaeal5.textContent = savedteaeal5;
-        teaeal5.removeAttribute("data-placeholder");
-      }
-
-      teaeal5.addEventListener("input", function() {
-        if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("teaeal5");
-        } else {
-          this.removeAttribute("data-placeholder");
-          localStorage.setItem("teaeal5", this.textContent);
-        }
-      });
-
-      if (savedteaeal6) {
-        teaeal6.textContent = savedteaeal6;
-        teaeal6.removeAttribute("data-placeholder");
-      }
-
-      teaeal6.addEventListener("input", function() {
-        if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("teaeal6");
-        } else {
-          this.removeAttribute("data-placeholder");
-          localStorage.setItem("teaeal6", this.textContent);
-        }
-      });
-
-      if (savedteaealdrft) {
-        teaealdrft.textContent = savedteaealdrft;
-        teaealdrft.removeAttribute("data-placeholder");
-      }
-
-      teaealdrft.addEventListener("input", function() {
-        if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("teaealdrft");
-        } else {
-          this.removeAttribute("data-placeholder");
-          localStorage.setItem("teaealdrft", this.textContent);
-        }
-      });
-  
-teaeal1.addEventListener("paste", function(e) {
-  e.preventDefault();
-  const text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
-  teaeal1.normalize();
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  const range = document.createRange();
-  range.selectNodeContents(teaeal1);
-  range.collapse(false);
-  selection.addRange(range);
-});
-
-teaeal2.addEventListener("paste", function(e) {
-  e.preventDefault();
-  const text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
-  teaeal2.normalize();
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  const range = document.createRange();
-  range.selectNodeContents(teaeal2);
-  range.collapse(false);
-  selection.addRange(range);
-});
-
-teaeal3.addEventListener("paste", function(e) {
-  e.preventDefault();
-  const text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
-  teaeal3.normalize();
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  const range = document.createRange();
-  range.selectNodeContents(teaeal3);
-  range.collapse(false);
-  selection.addRange(range);
-});
-
-teaeal4.addEventListener("paste", function(e) {
-  e.preventDefault();
-  const text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
-  teaeal4.normalize();
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  const range = document.createRange();
-  range.selectNodeContents(teaeal4);
-  range.collapse(false);
-  selection.addRange(range);
-});
-
-teaeal5.addEventListener("paste", function(e) {
-  e.preventDefault();
-  const text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
-  teaeal5.normalize();
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  const range = document.createRange();
-  range.selectNodeContents(teaeal5);
-  range.collapse(false);
-  selection.addRange(range);
-});
-
-teaeal6.addEventListener("paste", function(e) {
-  e.preventDefault();
-  const text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
-  teaeal6.normalize();
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  const range = document.createRange();
-  range.selectNodeContents(teaeal6);
-  range.collapse(false);
-  selection.addRange(range);
-});
-
-teaealdrft.addEventListener("paste", function(e) {
-  e.preventDefault();
-  const text = e.clipboardData.getData("text/plain");
-  document.execCommand("insertText", false, text);
-  teaealdrft.normalize();
-  const selection = window.getSelection();
-  selection.removeAllRanges();
-  const range = document.createRange();
-  range.selectNodeContents(teaealdrft);
-  range.collapse(false);
-  selection.addRange(range);
-});
-
-function openNav() {
-  document.getElementById("myNav").style.height = "100%";
-}
-
-function closeNav() {
-  document.getElementById("myNav").style.height = "0%";
-  document.getElementsByClassName("topnav").style = topnav.style;
-}
-
-window.addEventListener("load", function() {
-  var savedContent = localStorage.getItem("teaeal1");
-  if (savedContent) {
-    teaeal1.innerHTML = savedContent;
-  }
-  if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("teaeal1");
-        }
-});
-
-window.addEventListener("load", function() {
-  var savedContent = localStorage.getItem("teaeal2");
-  if (savedContent) {
-    teaeal2.innerHTML = savedContent;
-  }
-  if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("teaeal2");
-        }
-});
-
-window.addEventListener("load", function() {
-  var savedContent = localStorage.getItem("teaeal3");
-  if (savedContent) {
-    teaeal3.innerHTML = savedContent;
-  }
-  if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("teaeal3");
-        }
-});
-
-window.addEventListener("load", function() {
-  var savedContent = localStorage.getItem("teaeal4");
-  if (savedContent) {
-    teaeal4.innerHTML = savedContent;
-  }
-  if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("teaeal4");
-        }
-});
-
-window.addEventListener("load", function() {
-  var savedContent = localStorage.getItem("teaeal5");
-  if (savedContent) {
-    teaeal5.innerHTML = savedContent;
-  }
-  if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("teaeal5");
-        }
-});
-
-window.addEventListener("load", function() {
-  var savedContent = localStorage.getItem("teaeal6");
-  if (savedContent) {
-    teaeal6.innerHTML = savedContent;
-  }
-  if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("teaeal6");
-        }
-});
-
-window.addEventListener("load", function() {
-  var savedContent = localStorage.getItem("teaealdrft");
-  if (savedContent) {
-    teaealdrft.innerHTML = savedContent;
-  }
-  if (this.textContent.trim() === "") {
-          this.setAttribute("data-placeholder", "Start typing...");
-          localStorage.removeItem("teaealdrft");
-        }
-});
-
-resetButton.addEventListener("click", function() {
-  teaeal1.innerHTML = originalteaeal1;
-  teaeal1ex.innerHTML = originalteaeal1ex;
-  localStorage.removeItem("teaeal1");
-  teaeal1.setAttribute("data-placeholder", "Start typing...");
-  teaeal2.innerHTML = originalteaeal2;
-  teaeal2ex.innerHTML = originalteaeal2ex;
-  localStorage.removeItem("teaeal2");
-  teaeal2.setAttribute("data-placeholder", "Start typing...");
-  teaeal3.innerHTML = originalteaeal3;
-  teaeal3ex.innerHTML = originalteaeal3ex;
-  localStorage.removeItem("teaeal3");
-  teaeal3.setAttribute("data-placeholder", "Start typing...");
-  teaeal4.innerHTML = originalteaeal4;
-  teaeal4ex.innerHTML = originalteaeal4ex;
-  localStorage.removeItem("teaeal4");
-  teaeal4.setAttribute("data-placeholder", "Start typing...");
-  teaeal5.innerHTML = originalteaeal5;
-  teaeal5ex.innerHTML = originalteaeal5ex;
-  localStorage.removeItem("teaeal5");
-  teaeal5.setAttribute("data-placeholder", "Start typing...");
-  teaeal6.innerHTML = originalteaeal6;
-  teaeal6ex.innerHTML = originalteaeal6ex;
-  localStorage.removeItem("teaeal6");
-  teaeal6.setAttribute("data-placeholder", "Start typing...");
-  teaealdrft.innerHTML = originalteaealdrft;
-  teaealdrftex.innerHTML = originalteaealdrftex;
-  localStorage.removeItem("teaealdrft");
-  teaealdrft.setAttribute("data-placeholder", "Start typing...");
-});
+const elements = {
+    teaeal1: {
+      element: document.getElementById("teaeal1"),
+      placeholder: "Start typing...",
+      storageKey: "teaeal1",
+      originalContent: "",
+    },
+    teaeal2: {
+      element: document.getElementById("teaeal2"),
+      placeholder: "Start typing...",
+      storageKey: "teaeal2",
+      originalContent: "",
+    },
+    teaeal3: {
+      element: document.getElementById("teaeal3"),
+      placeholder: "Start typing...",
+      storageKey: "teaeal3",
+      originalContent: "",
+    },
+    teaeal4: {
+      element: document.getElementById("teaeal4"),
+      placeholder: "Start typing...",
+      storageKey: "teaeal4",
+      originalContent: "",
+    },
+    teaeal5: {
+      element: document.getElementById("teaeal5"),
+      placeholder: "Start typing...",
+      storageKey: "teaeal5",
+      originalContent: "",
+    },
+    teaeal6: {
+      element: document.getElementById("teaeal6"),
+      placeholder: "Start typing...",
+      storageKey: "teaeal6",
+      originalContent: "",
+    },
+    teaealdrft: {
+      element: document.getElementById("teaealdrft"),
+      placeholder: "Start typing...",
+      storageKey: "teaealdrft",
+      originalContent: "",
+    },
+  };
 
 toggleButton.addEventListener("click", function() {
   if (teaeal1.style.display === "none") {
@@ -528,24 +189,7 @@ function copyToClipboard() {
   navigator.clipboard.writeText(text);
     }
 }
-
-copy.addEventListener("click", function() {
-  copy.classList.remove("copyBtn");
-  copy.classList.add("green");
-  copy.innerHTML = "Copied <i class='fa-solid fa-check' style='color: #000000;'></i>";
-  setTimeout(function() {
-    copy.classList.remove("green");
-    copy.classList.add("copyBtn");
-    copy.innerHTML = "Copy <i class='fa-regular fa-copy' style='color: #000000;'></i>";
-  }, 2000);
-});
-
-comb.addEventListener("click", function() {
-  comb.innerHTML = "Combined <i class='fa-solid fa-check' style='color: #000000;'></i>";
-  setTimeout(function() {
-    comb.innerHTML = "Combine <i class='fa-solid fa-layer-group' style='color: #000000;'></i>";
-  }, 2000);
-});
 </script>
+<script src="temp.js"></script>
 </body>
 </html>
