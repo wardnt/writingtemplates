@@ -81,14 +81,15 @@ margin: 0;
   transform: translate(-50%, -50%);
   z-index: 99;
   background-color: white;
-  padding: 10px;
   border-radius: 20px;
   box-shadow: 0 2px 4px #00000033;
   display: none;
+  width: 40%;
 }
 .popup p {
   text-align: center;
   font-size: 23px;
+  padding: 10px 20px;
   color: #000000;
   border: none;
   margin: auto;
@@ -97,7 +98,7 @@ margin: 0;
 .popup h1 {
   text-align: center;
   margin: 0;
-  padding: 0;
+  padding: 20px 0 0 0;
   font-size: 45px;
   color: #000000;
 }
@@ -129,13 +130,15 @@ margin: 0;
 .close-btn {
   color: #000000;
   background-color: #ffffff;
+  text-align: center;
   font-size: 23px;
   border: 3px solid #676767;
   border-radius: 15px;
   margin: 10px 30px 10px auto;
   padding: 10px;
-  width: 200px;
-  margin: 10px 250px;
+  width: 150px;
+  margin: 10px auto;
+  margin-bottom: 20px;
   cursor: pointer;
 }
 .close-btn:hover {
@@ -398,6 +401,9 @@ height: 80px;
 .marginbox {
   width: 565px;
 }
+.popup {
+    width: 452px;
+}
 .overlay-content a {
   width: 29.33333%;
 }
@@ -423,9 +429,6 @@ right: 40px;
 h5 {
   padding: 0 5%;
 }
-.close-btn {
-  margin: 10px 100px;
-}
 }
 @media screen and (max-width: 705px) {
   .topBan {
@@ -433,8 +436,11 @@ h5 {
     height: 114px;
   }
   h1 {
-    padding-right: 800px;
     padding: 0px 800px 0px 10px;
+  }
+  .popup h1 {
+text-align: center;
+padding: 20px 0 0 0;
   }
   .par {
     height: 120px;
@@ -463,9 +469,6 @@ h5 {
     padding: auto;
     text-align: center;
   }
-  .popup {
-    width: 400px;
-  }
   h5 {
     margin: 20px 0;
   }
@@ -474,6 +477,9 @@ h5 {
 .marginbox {
   width: auto;
   margin: 0 15px;
+}
+.popup h1 {
+    margin: 0;
 }
 }
 @media screen and (max-width: 570px) {
@@ -508,11 +514,10 @@ h5 {
   h5 {
     padding: 0 15px;
   }
-  .popup {
-    width: 300px;
   }
-  .close-btn {
-    width: 150px;
-    margin: 10px 76px;
-  }
+  @media screen and (max-width: 512px) {
+    .popup {
+        width: calc(100% - 60px);
+        margin: 0;
+    }
   }
