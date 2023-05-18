@@ -393,6 +393,11 @@ h5 {
 }
 }
 @media screen and (max-width: 1130px) {
+    .reset {
+        margin: 3.36vw 20px 20px auto;
+        }
+}
+@media screen and (max-width: 1130px) {
 .topBan {
   height: 8.89vw;
   font-size: 3.54vw;
@@ -406,7 +411,7 @@ height: 9.8vw;
 }
 .recpar {
   height: 9.8vw;
-  right: 40px;
+  right: 55px;
   width: 14.5vw;
 }
 .marginbox {
@@ -430,6 +435,11 @@ h5 {
   padding: 0 5%;
 }
 }
+@media screen and (max-width: 794px) {
+    .reset {
+        margin: 3.36vw 2.52vw 2.52vw auto;
+        }
+}
 @media screen and (max-width: 705px) {
   .topBan {
     font-size: 24.96px;
@@ -449,19 +459,20 @@ padding: 20px 0 0 0;
   .rec {
     width: 0;
     height: 0;
-    border-left: 130px solid transparent;
+    border-left: 133px solid transparent;
     border-right: 0px solid transparent;
-    border-top: 130px solid #ed202d;
+    border-top: 133px solid #ed202d;
   background-color: #ffffff;
   }
   .recpar {
     height: 130px;
-    right: 60px;
+    right: 65px;
+    width: 13vw;
   }
   .reset {
-  height: 60px;
-  width: 60px;
-  font-size: 30px;
+  height: 9.93vw;
+  width: 9.93vw;
+  font-size: 5.67vw;
   }
   .reset i {
     padding: auto;
@@ -471,6 +482,13 @@ padding: 20px 0 0 0;
     margin: 20px 0;
   }
 }
+@media screen and (max-width: 600px) {
+    .reset {
+      height: 60px;
+      width: 60px;
+      font-size: 34px;
+    }
+}
 @media screen and (max-width: 595px) {
 .marginbox {
   width: auto;
@@ -479,19 +497,15 @@ padding: 20px 0 0 0;
 .popup h1 {
     margin: 0;
 }
+.reset {
+    margin: 20px 15px 15px auto;
+    }
 }
 @media screen and (max-width: 570px) {
   .rec {
   background-color: #ffffff00;
   }
-  .reset {
-  margin: 20px 15px 15px auto;
-  }
   img {
-    bottom: 0;
-    left: 0;
-    width: 75.6px;
-    height: 66.8px;
     padding: 40px 10px 30px 10px;
   }
   h5 {
