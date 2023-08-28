@@ -6,6 +6,7 @@ const popup1 = document.getElementById("popup1");
 const popup2 = document.getElementById("popup2");
 const overlaypopup = document.getElementById("overlaypopup");
 const closeBtns = document.querySelectorAll(".close-btn");
+const cancelBtn = document.querySelectorAll(".cancelBtn");
 var myNav = document.getElementById("myNav");
   function setContent(element) {
     if (element.element.textContent.trim() === "") {
@@ -46,9 +47,12 @@ var myNav = document.getElementById("myNav");
   }
   
   function resetContent(element) {
+    setTimeout(()=> {
     element.element.innerHTML = element.originalContent;
     localStorage.removeItem(element.storageKey);
     element.element.setAttribute("data-placeholder", "Start typing...");
+    }
+    ,100);
   }
   
   for (const key in elements) {
@@ -71,10 +75,12 @@ var myNav = document.getElementById("myNav");
     handleLoad(element);
   }
   
-  resetButton.addEventListener("click", function () {
+  deleteBtn.addEventListener("click", function () {
     for (const key in elements) {
       const element = elements[key];
       resetContent(element);
+      resetPopup.style.display = "none";
+      overlaypopup.style.display = "none";
     }
   });
   copy.addEventListener("click", function () {
@@ -116,11 +122,22 @@ var myNav = document.getElementById("myNav");
     popup2.style.display = "block";
     overlaypopup.style.display = "block";
   });
+
+  resetButton.addEventListener("click", function() {
+    resetPopup.style.display = "block";
+    overlaypopup.style.display = "block";
+  });
   
   for (let i = 0; i < closeBtns.length; i++) {
     closeBtns[i].addEventListener("click", function() {
       popup1.style.display = "none";
       popup2.style.display = "none";
+      overlaypopup.style.display = "none";
+    });
+  }
+  for (let i = 0; i < cancelBtn.length; i++) {
+    cancelBtn[i].addEventListener("click", function() {
+      resetPopup.style.display = "none";
       overlaypopup.style.display = "none";
     });
   }

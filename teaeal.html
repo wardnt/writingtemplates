@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TEAEAL writing template</title>
     <script src="https://kit.fontawesome.com/a98e96b6de.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="templatestyle9.css">
+    <link rel="stylesheet" href="templatestyle10.css">
     <link rel="shortcut icon" type="x-icon" href="writetemp.png">
 </head>
 <body>
@@ -87,7 +87,15 @@
             <h3>Click combine to compile a draft</h3>
           </div>
         </div>
+        <button class="save" id="save"><i class="fa-solid fa-rotate-right" style="color: #ffffff;"></i></button>
             <button class="reset" id="resetButton"><i class="fa-regular fa-trash-can" style="color: #000000;"></i></button>
+            <div id="resetPopup" class="popup">
+              <h1>Confirm Delete?</h1>
+              <div class="btnBox">
+              <div class="cancelBtn">Cancel</div>
+              <button class="deleteBtn" id="deleteBtn"><i class="fa-regular fa-trash-can" style="color: #8B0000;"></i></button>
+              </div>
+            </div>
 
             <div class="botBan">
               <a href="https://www.wab-edu.cn" target="_blank"><img src="https://libapps-au.s3-ap-southeast-2.amazonaws.com/customers/721/images/wab_logo_white_300dpi.png" alt="WAB logo"></a>
@@ -174,6 +182,27 @@ toggleButton.addEventListener("click", function() {
     teaealdrftex.style.display = "";
   }
 });
+
+const deleteBtn = document.getElementById("deleteBtn");
+  deleteBtn.addEventListener("click", function () {
+    teaealdrft.removeAttribute("data-placeholder");
+    let combinedContent = "";
+    for (const key in elements) {
+      if (elements[key].element !== teaealdrft) {
+        combinedContent += elements[key].element.innerHTML + "\n";
+      }
+    }
+    localStorage.setItem("combinedSave", combinedContent);
+  });
+  
+  const saveButton = document.getElementById("save");
+  saveButton.addEventListener("click", function () {
+    const combinedContent = localStorage.getItem("combinedSave");
+    if (combinedContent !== null) {
+      teaealdrft.removeAttribute("data-placeholder");
+      teaealdrft.innerHTML = combinedContent;
+    }
+  });
 
 combineButton.addEventListener("click", function() {
   teaealdrft.innerHTML = teaeal1.innerHTML + "\n" + teaeal2.innerHTML + "\n" + teaeal3.innerHTML + "\n" + teaeal4.innerHTML + "\n" + teaeal5.innerHTML + "\n" + teaeal6.innerHTML;

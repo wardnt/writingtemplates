@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PEEL writing template</title>
     <script src="https://kit.fontawesome.com/a98e96b6de.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="templatestyle9.css">
+    <link rel="stylesheet" href="templatestyle10.css">
     <link rel="shortcut icon" type="x-icon" href="writetemp.png">
 </head>
 <body>
@@ -79,7 +79,15 @@
             <h3>Click combine to compile a draft</h3>
             </div>
           </div>
+          <button class="save" id="save"><i class="fa-solid fa-rotate-right" style="color: #ffffff;"></i></button>
             <button class="reset" id="resetButton"><i class="fa-regular fa-trash-can" style="color: #000000;"></i></button>
+            <div id="resetPopup" class="popup">
+              <h1>Confirm Delete?</h1>
+              <div class="btnBox">
+              <div class="cancelBtn">Cancel</div>
+              <button class="deleteBtn" id="deleteBtn"><i class="fa-regular fa-trash-can" style="color: #8B0000;"></i></button>
+              </div>
+            </div>
         
 
             <div class="botBan">
@@ -148,6 +156,28 @@ toggleButton.addEventListener("click", function() {
   }
 });
 
+
+const deleteBtn = document.getElementById("deleteBtn");
+  deleteBtn.addEventListener("click", function () {
+    peeldrft.removeAttribute("data-placeholder");
+    let combinedContent = "";
+    for (const key in elements) {
+      if (elements[key].element !== peeldrft) {
+        combinedContent += elements[key].element.innerHTML + "\n";
+      }
+    }
+    localStorage.setItem("combinedSave", combinedContent);
+  });
+  
+  const saveButton = document.getElementById("save");
+  saveButton.addEventListener("click", function () {
+    const combinedContent = localStorage.getItem("combinedSave");
+    if (combinedContent !== null) {
+      peeldrft.removeAttribute("data-placeholder");
+      peeldrft.innerHTML = combinedContent;
+    }
+  });
+  
 combineButton.addEventListener("click", function() {
   peeldrft.innerHTML = peelp.innerHTML + "\n" + peele.innerHTML + "\n" + peel2e.innerHTML + "\n" + peell.innerHTML;
   peeldrft.removeAttribute("data-placeholder");
